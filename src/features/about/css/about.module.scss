@@ -1,0 +1,22 @@
+.section {
+  width: 100%;
+  max-width: var(--content-width);
+  height: fit-content;
+
+  header {
+    text-rendering: auto;
+    text-align: left;
+    text-wrap: pretty;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    height: fit-content;
+    max-height: none;
+    max-width: 100%;
+  }
+}

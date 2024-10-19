@@ -1,0 +1,93 @@
+.project,
+.experience {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 25% 1fr;
+  grid-template-rows: 1;
+  margin: 0;
+  list-style-type: none;
+  gap: 1rem;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 0.5px solid hsl(var(--border));
+  background-color: hsl(var(--muted) / 0.5);
+  text-decoration: none !important;
+  transition: background-color 0.2s ease-in-out;
+
+  @media (prefers-color-scheme: light) {
+    --ring-shadow: 0 0 #0000;
+    --ring-offset-shadow: 0 0 #0000;
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05),
+      0 1px 2px -1px rgba(0, 0, 0, 0.05);
+    --shadow-colored: 0 1px 2px 0 var(--shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--ring-shadow, 0 0 #0000), var(--shadow);
+  }
+
+  &:hover {
+    background-color: hsl(var(--muted) / 1);
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    font-size: 0.75rem;
+    font-weight: 600;
+    width: fit-content;
+    color: hsl(var(--foreground) / 1);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    .title {
+      font-size: 1rem;
+      .titleLink {
+        font-size: inherit;
+      }
+    }
+    .description {
+      font-size: 14px;
+      text-wrap: pretty;
+    }
+  }
+
+  .techList {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.25rem 0;
+    .techItem {
+      list-style-type: none !important;
+      padding: 6px 12px;
+      width: fit-content;
+      background-color: hsl(var(--card));
+      color: hsl(var(--card-foreground) / 0.85);
+      border: 1px solid hsl(var(--border));
+      border-radius: 4px;
+      font-size: 0.8rem;
+      line-height: 1;
+      letter-spacing: 1.1;
+
+      @media (prefers-color-scheme: dark) {
+        background-color: hsl(var(--tag));
+        color: hsl(var(--tag-foreground));
+        border-color: hsl(var(--tag-foreground));
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .project,
+  .experience {
+    grid-template-columns: 25% 1fr;
+  }
+}

@@ -1,0 +1,26 @@
+.pageContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  padding: 1px 40px 1px 40px;
+
+  gap: 3rem;
+
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  .layout {
+    padding: 1px 20px 1px 20px;
+  }
+}

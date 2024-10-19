@@ -1,0 +1,14 @@
+.status {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.active {
+  background-color: hsl(var(--success)/0.7);
+}
+
+.inactive {
+  background-color: hsl(var(--destructive)/0.5);
+}/*# sourceMappingURL=projectStatus.module.css.map */

@@ -1,0 +1,99 @@
+.contentStyling {
+  > * {
+    font-family: inherit;
+  }
+
+  h1 {
+    color: hsl(var(--foreground));
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  h2 {
+    color: hsl(var(--foreground) / 0.9);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  h3 {
+    color: hsl(var(--foreground) / 0.8);
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  h4 {
+    color: hsl(var(--foreground) / 0.7);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.45;
+  }
+  h5 {
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    line-height: 1.55;
+    font-weight: 500;
+    font-size: 1.125rem;
+  }
+
+  a {
+    color: hsl(var(--blue));
+    text-decoration: underline;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 400;
+    font-weight: inherit;
+  }
+
+  p {
+    color: hsl(var(--foreground) / 1);
+
+    @media screen and (-webkit-prefers-color-scheme: dark),
+      screen and (prefers-color-scheme: dark) {
+      color: hsl(var(--muted-foreground) / 1);
+    }
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .layout {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+    h4 {
+      font-size: 1.25rem;
+    }
+    h5 {
+      font-size: 1.25rem;
+    }
+
+    h6 {
+      font-size: 1rem;
+    }
+
+    a {
+      font-size: 1rem;
+    }
+
+    p,
+    li {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+.asideWrapper {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  max-height: 100vh;
+
+  width: 100%;
+  max-width: var(--aside-width);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .asideContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    flex: 1;
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+
+      > * {
+        line-height: 1;
+      }
+
+      .image {
+        width: 50%;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .headerInfoWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        .title {
+          letter-spacing: -1.5px;
+        }
+        .jobTitle {
+          font-family: var(--font-geist-mono);
+        }
+      }
+    }
+    .nav {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1.25rem;
+      .navLink {
+        .icon {
+          color: hsl(var(--muted-foreground));
+          transition: color var(--transition-time) ease;
+        }
+
+        &:hover {
+          & .icon {
+            color: hsl(var(--foreground));
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .asideWrapper {
+    padding-top: 4rem;
+    padding-bottom: 0;
+    position: relative;
+    max-width: 100%;
+
+    .asideContent {
+      width: 100%;
+      height: fit-content;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      .header {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+
+        .image {
+          //display: none;
+          width: 100%;
+          max-width: 150px;
+        }
+
+        .headerInfoWrapper {
+        }
+      }
+
+      .nav {
+        width: fit-content;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .asideWrapper {
+    padding-top: 40px;
+
+    .asideContent {
+      .header {
+        .image {
+        }
+
+        .headerInfoWrapper {
+          gap: 0.5rem;
+        }
+      }
+
+      .nav {
+      }
+    }
+  }
+}
+@media (max-width: 640px) {
+  .asideWrapper {
+    .asideContent {
+      .header {
+        .image {
+          display: none;
+        }
+
+        .headerInfoWrapper {
+        }
+      }
+
+      .nav {
+      }
+    }
+  }
+}

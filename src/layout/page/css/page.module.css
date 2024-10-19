@@ -1,0 +1,13 @@
+.page {
+  width: 100%;
+  padding: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .page {
+    padding-top: 0;
+  }
+}/*# sourceMappingURL=page.module.css.map */
