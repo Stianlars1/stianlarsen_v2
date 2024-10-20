@@ -15,7 +15,7 @@
   text-decoration: none !important;
   transition: background-color 0.2s ease-in-out;
 }
-@media (prefers-color-scheme: light) {
+@media screen and (prefers-color-scheme: light) {
   .project,
   .experience {
     --ring-shadow: 0 0 #0000;
@@ -85,7 +85,7 @@
   line-height: 1;
   letter-spacing: 1.1;
 }
-@media (prefers-color-scheme: dark) {
+@media screen and (prefers-color-scheme: dark) {
   .project .techList .techItem,
   .experience .techList .techItem {
     background-color: hsl(var(--tag));
@@ -94,7 +94,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .project,
   .experience {
     grid-template-columns: 25% 1fr;
