@@ -5,22 +5,19 @@
   min-height: 100vh;
   display: flex;
   flex-direction: row;
-
   padding: 1px 40px 1px 40px;
-
-  gap: 3rem;
-
+  gap: 6rem;
   position: relative;
 }
 
-@media (max-width: 1024px) {
-  .layout {
+@media screen and (max-width: 1024px) {
+  .pageContainer {
     flex-direction: column;
     gap: 3rem;
   }
 }
-@media (max-width: 768px) {
-  .layout {
+@media screen and (max-width: 768px) {
+  .pageContainer {
     padding: 1px 20px 1px 20px;
   }
-}
+}/*# sourceMappingURL=pageContainer.module.css.map */

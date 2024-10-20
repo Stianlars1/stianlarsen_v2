@@ -1,7 +1,7 @@
 import { About } from "@/features/about/about";
 import { Experience } from "@/features/experience/experience";
 import { Projects } from "@/features/projects/projects";
-import { Page } from "@/layout/page/page";
+import { Page } from "@/ui_layout/page/page";
 import { Metadata, Viewport } from "next";
 import { rootMeta, useThisViewport } from "./rootMeta";
 export const metadata: Metadata = rootMeta;

@@ -1,5 +1,5 @@
-import { Aside } from "@/layout/aside/aside";
-import { PageContainer } from "@/layout/pageContainer/pageContainer";
+import { Aside } from "@/ui_layout/aside/aside";
+import { PageContainer } from "@/ui_layout/pageContainer/pageContainer";
 import localFont from "next/font/local";
 import "./globals.css";
 const geistSans = localFont({
