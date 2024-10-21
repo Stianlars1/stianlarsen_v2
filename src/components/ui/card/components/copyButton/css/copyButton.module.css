@@ -1,0 +1,16 @@
+.copyButton {
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border: 1px solid hsl(var(--border));
+  outline: 1px solid hsl(var(--border));
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.copyButton:hover {
+  background-color: hsl(var(--secondary)/0.75);
+}
+.copyButton:active {
+  transform: scale(0.95);
+}/*# sourceMappingURL=copyButton.module.css.map */

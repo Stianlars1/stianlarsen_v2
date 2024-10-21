@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import styles from "./css/section.module.css";
-export type Sections = "experience" | "projects";
+export type Sections = "experience" | "projects" | "Open Source Projects";
 export const Section = ({
   title,
   children,

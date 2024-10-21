@@ -1,9 +1,10 @@
 import { ReactElement, ReactNode } from "react";
 import { project_audiovisualizer } from "./audioVisualizer/audioVisualizer";
-import { project_qr_kode } from "./qr-kode/project_qr-kode";
+import { qr_code } from "./qr-kode/project_qr-kode";
 import { skipperenutleie } from "./skipperenutleie/skipperenutleie";
 import { project_strek_kode } from "./strek-kode/project_strek-kode";
-import { project_taskbuddy } from "./taskBuddy/project_taskbuddy";
+import { taskbuddy_app } from "./taskBuddy/taskbuddy_app";
+import { taskbuddy_landingpage } from "./taskBuddy/taskbuddy_landingpage";
 import { project_tinify } from "./tinify/tinify";
 
 export interface Project {
@@ -18,9 +19,10 @@ export interface Project {
 
 export const projects: Project[] = [
   project_tinify,
-  project_taskbuddy,
+  taskbuddy_app,
+  taskbuddy_landingpage,
   project_strek_kode,
-  project_qr_kode,
+  qr_code,
   skipperenutleie,
   project_audiovisualizer,
 ].sort(

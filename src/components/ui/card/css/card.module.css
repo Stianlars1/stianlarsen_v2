@@ -1,5 +1,6 @@
+.experience,
 .project,
-.experience {
+.openSource {
   display: grid;
   width: 100%;
   grid-template-columns: 25% 1fr;
@@ -11,13 +12,17 @@
   padding: 1rem;
   border-radius: 8px;
   border: 0.5px solid hsl(var(--border));
-  background-color: hsl(var(--muted)/0.5);
+  background-color: hsl(var(--muted)/0.25);
   text-decoration: none !important;
   transition: background-color 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 @media screen and (prefers-color-scheme: light) {
+  .experience,
   .project,
-  .experience {
+  .openSource {
     --ring-shadow: 0 0 #0000;
     --ring-offset-shadow: 0 0 #0000;
     --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05),
@@ -26,12 +31,14 @@
     box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--shadow);
   }
 }
+.experience:hover,
 .project:hover,
-.experience:hover {
+.openSource:hover {
   background-color: hsl(var(--muted)/1);
 }
+.experience .header,
 .project .header,
-.experience .header {
+.openSource .header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -43,27 +50,78 @@
   width: fit-content;
   color: hsl(var(--foreground)/1);
 }
+.experience .content,
 .project .content,
-.experience .content {
+.openSource .content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+.experience .content .title,
+.project .content .title,
+.openSource .content .title {
+  font-size: 1rem;
+  color: hsl(var(--foreground));
+  display: inline-flex;
+  gap: 0.5rem;
+}
+.experience .content .title .titleLink,
+.project .content .title .titleLink,
+.openSource .content .title .titleLink {
+  font-size: inherit;
+}
+.experience .content .fadeTitle,
+.project .content .fadeTitle,
+.openSource .content .fadeTitle {
+  display: inline-flex;
+}
+.experience .content .description,
+.project .content .description,
+.openSource .content .description {
+  font-size: 14px;
+  text-wrap: pretty;
+  color: hsl(var(--muted-foreground));
+}
+.experience .content .gradientDescription,
+.experience .content .lightBeamDesc,
+.project .content .gradientDescription,
+.project .content .lightBeamDesc,
+.openSource .content .gradientDescription,
+.openSource .content .lightBeamDesc {
+  color: hsl(var(--foreground)/0.9);
+}
+.experience .content .meteorsDescription,
+.experience .content .meteorsTitle,
+.project .content .meteorsDescription,
+.project .content .meteorsTitle,
+.openSource .content .meteorsDescription,
+.openSource .content .meteorsTitle {
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+.experience .content .descriptionList,
+.project .content .descriptionList,
+.openSource .content .descriptionList {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.project .content .title,
-.experience .content .title {
-  font-size: 1rem;
+.experience .content .descriptionList li,
+.project .content .descriptionList li,
+.openSource .content .descriptionList li {
+  margin-left: 0.875rem;
+  color: hsl(var(--muted-foreground));
 }
-.project .content .title .titleLink,
-.experience .content .title .titleLink {
-  font-size: inherit;
+.experience .content strong,
+.project .content strong,
+.openSource .content strong {
+  color: hsl(var(--foreground)/0.65);
 }
-.project .content .description,
-.experience .content .description {
-  font-size: 14px;
-  text-wrap: pretty;
-}
+.experience .techList,
 .project .techList,
-.experience .techList {
+.openSource .techList {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -71,8 +129,9 @@
   gap: 1rem;
   padding: 0.25rem 0;
 }
+.experience .techList .techItem,
 .project .techList .techItem,
-.experience .techList .techItem {
+.openSource .techList .techItem {
   list-style-type: none !important;
   padding: 6px 12px;
   width: -moz-fit-content;
@@ -86,12 +145,49 @@
   letter-spacing: 1.1;
 }
 @media screen and (prefers-color-scheme: dark) {
+  .experience .techList .techItem,
   .project .techList .techItem,
-  .experience .techList .techItem {
+  .openSource .techList .techItem {
     background-color: hsl(var(--tag));
     color: hsl(var(--tag-foreground));
     border-color: hsl(var(--tag-foreground));
   }
+}
+
+.gradientLinkBg {
+  background-color: hsl(var(--background)/0.45);
+}
+.gradientLinkBg:hover {
+  background-color: hsl(var(--muted)/1);
+}
+.gradientLinkBg:hover .gradientBg {
+  opacity: 0 !important;
+}
+
+.gradientBg {
+  transition: all 0.2s ease;
+}
+.gradientBg:hover {
+  opacity: 0 !important;
+}
+
+.downloadsBadge {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+}
+
+.lightBeam {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  opacity: 0.25 !important;
 }
 
 @media screen and (max-width: 1024px) {

@@ -1,0 +1,14 @@
+.downloadsBadge {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+}
+
+.shieldIoImage {
+  width: auto;
+  height: auto;
+}

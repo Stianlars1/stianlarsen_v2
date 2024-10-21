@@ -12,6 +12,7 @@ export interface Experience {
   responsibilities?: string[]; // An array of bullet points (if applicable)
   technologies: string[]; // e.g., ["JavaScript", "TypeScript", "React"]
   companyUrl?: string; // e.g., "https://www.sparebank1.no"
+  descriptionList?: ReactNode[];
 }
 
 export const experiences: Experience[] = [sparebank1_utvikling].sort(

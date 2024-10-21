@@ -1,0 +1,11 @@
+.notMountedClass {
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  right: 0;
+  bottom: 1rem;
+  z-index: 1000;
+  transform: skewY(-2deg);
+  background: #c2499e;
+  opacity: 0.6;
+}/*# sourceMappingURL=gradientBg.module.css.map */
