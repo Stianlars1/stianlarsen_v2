@@ -39,7 +39,11 @@
   inset: -1px;
   transition: all 0.25s ease;
   opacity: 1;
-  background: linear-gradient(to bottom, transparent 0%, hsl(var(--background)) 100%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    hsl(var(--background)) 100%
+  );
 }
 .resume__fileWrapper:hover {
   height: 100%;
@@ -55,4 +59,4 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-}/*# sourceMappingURL=resume.css.map */
+} /*# sourceMappingURL=resume.css.map */

@@ -17,5 +17,5 @@ export interface Experience {
 
 export const experiences: Experience[] = [sparebank1_utvikling].sort(
   (a, b) =>
-    new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
+    new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime(),
 );

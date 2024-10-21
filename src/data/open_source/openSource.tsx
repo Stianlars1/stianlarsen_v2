@@ -29,5 +29,5 @@ export const open_source_projects_map: OpenSourceType[] = [
   react_gradient_animation,
 ].sort(
   (a, b) =>
-    new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
+    new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime(),
 );

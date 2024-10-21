@@ -12,7 +12,7 @@
   padding: 1rem;
   border-radius: 8px;
   border: 0.5px solid hsl(var(--border));
-  background-color: hsl(var(--muted)/0.25);
+  background-color: hsl(var(--muted) / 0.25);
   text-decoration: none !important;
   transition: background-color 0.2s ease-in-out;
   position: relative;
@@ -28,13 +28,14 @@
     --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05),
       0 1px 2px -1px rgba(0, 0, 0, 0.05);
     --shadow-colored: 0 1px 2px 0 var(--shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--shadow);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+      var(--ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--shadow);
   }
 }
 .experience:hover,
 .project:hover,
 .openSource:hover {
-  background-color: hsl(var(--muted)/1);
+  background-color: hsl(var(--muted) / 1);
 }
 .experience .header,
 .project .header,
@@ -48,7 +49,7 @@
   font-weight: 600;
   width: -moz-fit-content;
   width: fit-content;
-  color: hsl(var(--foreground)/1);
+  color: hsl(var(--foreground) / 1);
 }
 .experience .content,
 .project .content,
@@ -89,7 +90,7 @@
 .project .content .lightBeamDesc,
 .openSource .content .gradientDescription,
 .openSource .content .lightBeamDesc {
-  color: hsl(var(--foreground)/0.9);
+  color: hsl(var(--foreground) / 0.9);
 }
 .experience .content .meteorsDescription,
 .experience .content .meteorsTitle,
@@ -99,7 +100,7 @@
 .openSource .content .meteorsTitle {
   background-color: transparent;
   -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 .experience .content .descriptionList,
 .project .content .descriptionList,
@@ -117,7 +118,7 @@
 .experience .content strong,
 .project .content strong,
 .openSource .content strong {
-  color: hsl(var(--foreground)/0.65);
+  color: hsl(var(--foreground) / 0.65);
 }
 .experience .techList,
 .project .techList,
@@ -137,7 +138,7 @@
   width: -moz-fit-content;
   width: fit-content;
   background-color: hsl(var(--card));
-  color: hsl(var(--card-foreground)/0.85);
+  color: hsl(var(--card-foreground) / 0.85);
   border: 1px solid hsl(var(--border));
   border-radius: 4px;
   font-size: 0.8rem;
@@ -155,10 +156,10 @@
 }
 
 .gradientLinkBg {
-  background-color: hsl(var(--background)/0.45);
+  background-color: hsl(var(--background) / 0.45);
 }
 .gradientLinkBg:hover {
-  background-color: hsl(var(--muted)/1);
+  background-color: hsl(var(--muted) / 1);
 }
 .gradientLinkBg:hover .gradientBg {
   opacity: 0 !important;
@@ -195,4 +196,4 @@
   .experience {
     grid-template-columns: 25% 1fr;
   }
-}/*# sourceMappingURL=card.module.css.map */
+} /*# sourceMappingURL=card.module.css.map */

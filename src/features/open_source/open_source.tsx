@@ -9,10 +9,10 @@ export const OpenSourceProjects = async () => {
     open_source_projects_map.map(async (project) => {
       const downloads = await getNpmDownloads(
         project.packageName,
-        "last-month"
+        "last-month",
       );
       return { ...project, downloads };
-    })
+    }),
   );
 
   return (

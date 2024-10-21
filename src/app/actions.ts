@@ -1,5 +1,5 @@
 export const checkWebsiteStatus = async (
-  url: string
+  url: string,
 ): Promise<"ACTIVE" | "INACTIVE"> => {
   try {
     const response = await fetch(url, { method: "HEAD" });
@@ -25,7 +25,7 @@ export interface NpmDownloadData {
 
 export const getNpmDownloads = async (
   packageName: string,
-  period: "last-week" | "last-month" | "last-day" = "last-week"
+  period: "last-week" | "last-month" | "last-day" = "last-week",
 ): Promise<number | null> => {
   try {
     const controller = new AbortController();
@@ -35,9 +35,9 @@ export const getNpmDownloads = async (
 
     const response = await fetch(
       `https://api.npmjs.org/downloads/point/${period}/${encodeURIComponent(
-        packageName
+        packageName,
       )}`,
-      { signal: controller.signal, next: { revalidate: 60 * 60 * 24 } } // revalidate every 24 hours
+      { signal: controller.signal, next: { revalidate: 60 * 60 * 24 } }, // revalidate every 24 hours
     );
 
     clearTimeout(timeout);

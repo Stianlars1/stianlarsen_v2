@@ -34,7 +34,7 @@
   height: auto;
   border-radius: 50%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .asideWrapper .asideContent .header .headerInfoWrapper {
   display: flex;
@@ -105,4 +105,4 @@
   .asideWrapper .asideContent .header .image {
     display: none;
   }
-}/*# sourceMappingURL=aside.module.css.map */
+} /*# sourceMappingURL=aside.module.css.map */

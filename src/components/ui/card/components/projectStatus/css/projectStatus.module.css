@@ -6,11 +6,11 @@
 }
 
 .active {
-  background-color: hsl(var(--success)/0.35);
-  color: hsl(var(--foreground)/0.85);
+  background-color: hsl(var(--success) / 0.35);
+  color: hsl(var(--foreground) / 0.85);
 }
 
 .inactive {
-  background-color: hsl(var(--destructive)/0.35);
-  color: hsl(var(--foreground)/0.85);
-}/*# sourceMappingURL=projectStatus.module.css.map */
+  background-color: hsl(var(--destructive) / 0.35);
+  color: hsl(var(--foreground) / 0.85);
+} /*# sourceMappingURL=projectStatus.module.css.map */

@@ -39,7 +39,7 @@ export const OpenSourceDownloadShieldBadge = ({
   period = "dw",
 }: OpenSourceDownloadShieldBadgeProps) => {
   const badgeUrl = `https://img.shields.io/npm/${period}/${encodeURIComponent(
-    packageName
+    packageName,
   )}.svg`;
 
   return (

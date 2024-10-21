@@ -9,8 +9,8 @@
   width: fit-content;
 }
 .copyButton:hover {
-  background-color: hsl(var(--secondary)/0.75);
+  background-color: hsl(var(--secondary) / 0.75);
 }
 .copyButton:active {
   transform: scale(0.95);
-}/*# sourceMappingURL=copyButton.module.css.map */
+} /*# sourceMappingURL=copyButton.module.css.map */

@@ -14,4 +14,3 @@ export const CopyButton = ({ text }: { text: string }) => {
     </button>
   );
 };
-("");

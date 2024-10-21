@@ -27,5 +27,5 @@ export const projects: Project[] = [
   project_audiovisualizer,
 ].sort(
   (a, b) =>
-    new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
+    new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime(),
 );
