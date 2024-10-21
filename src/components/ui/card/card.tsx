@@ -65,7 +65,6 @@ export const OpenSourceCard = (project: OpenSourceType) => {
   const isBorderBeamCard = packageName === "@stianlarsen/border-beam";
   const isCopyCard = packageName === "@stianlarsen/copy-to-clipboard";
   const isLightBeamCard = packageName === "@stianlarsen/react-light-beam";
-  const isCodePreviewCard = packageName === "@stianlarsen/react-code-preview";
   return (
     <>
       <Link
@@ -119,8 +118,6 @@ export const OpenSourceCard = (project: OpenSourceType) => {
           )}
 
           {isCopyCard && <CopyButton text={`Copy was successfull🎉`} />}
-
-          {/* {isCodePreviewCard && <CodePreviewer />} */}
         </div>
 
         {isReactGradientAnimationCard && (
