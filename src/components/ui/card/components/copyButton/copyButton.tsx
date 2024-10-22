@@ -6,11 +6,11 @@ export const CopyButton = ({ text }: { text: string }) => {
   const [copied, setCopied] = useState(false);
   const handleClick = (e: any) => {
     e.preventDefault();
-    copy(text, () => setCopied(true));
+    copy(text, () => setCopied(!copied));
   };
   return (
     <button onClick={handleClick} className={styles.copyButton}>
-      {copied ? "Copied 🎉" : "Test Copy Function"}
+      {copied ? "Copied 🎉" : "copy 👈"}
     </button>
   );
 };

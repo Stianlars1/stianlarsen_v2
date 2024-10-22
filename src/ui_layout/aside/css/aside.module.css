@@ -30,7 +30,7 @@
   line-height: 1;
 }
 .asideWrapper .asideContent .header .image {
-  width: 50%;
+  width: 150px;
   height: auto;
   border-radius: 50%;
   -o-object-fit: cover;

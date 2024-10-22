@@ -1,0 +1,16 @@
+.opHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  gap: 0.5rem;
+  color: hsl(var(--foreground));
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+
+  .label {
+  }
+
+  .input {
+  }
+}

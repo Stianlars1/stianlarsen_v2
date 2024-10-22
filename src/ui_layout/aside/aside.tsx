@@ -1,3 +1,4 @@
+import { Tooltip } from "@/components/ui/tooltip/tooltip";
 import { ME } from "@/data/about_me/me";
 import { Socials } from "@/data/social/social";
 import Image from "next/image";
@@ -12,9 +13,8 @@ export const Aside = () => {
           <Image
             src="/stian/STIAN_PHOTO.jpg"
             alt="Portrait image of Stian Larsen"
-            width={0}
-            height={0}
-            sizes="100vw"
+            width={150}
+            height={150}
             priority
             quality={100}
             className={styles.image}
@@ -26,15 +26,16 @@ export const Aside = () => {
         </header>
         <nav className={styles.nav}>
           {Socials.map((social) => (
-            <Link
-              className={styles.navLink}
-              key={social.name}
-              href={social.url}
-              target={social.target}
-              rel={social.rel}
-            >
-              {social.icon({ className: styles.icon, size: 24 })}
-            </Link>
+            <Tooltip content={social.name} key={social.name}>
+              <Link
+                className={styles.navLink}
+                href={social.url}
+                target={social.target}
+                rel={social.rel}
+              >
+                {social.icon({ className: styles.icon, size: 24 })}
+              </Link>
+            </Tooltip>
           ))}
         </nav>
       </aside>

@@ -44,7 +44,7 @@ export const Socials: Social[] = [
     url: "https://www.x.com/litehode",
   },
   {
-    name: "resume",
+    name: "Resume",
     icon: FaFilePdf,
     url: "/resume.pdf",
     target: "_blank",

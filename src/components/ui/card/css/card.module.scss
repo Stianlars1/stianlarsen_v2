@@ -55,9 +55,18 @@
       font-size: 1rem;
       color: hsl(var(--foreground));
       display: inline-flex;
+      align-items: center;
       gap: 0.5rem;
       .titleLink {
         font-size: inherit;
+      }
+
+      .linkTitle {
+        font-size: inherit;
+        color: hsl(var(--blue));
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
       }
     }
 
@@ -157,6 +166,17 @@
   transform: translateX(-50%);
   z-index: -1;
   opacity: 0.25 !important;
+}
+
+.noHoverCard {
+  cursor: initial;
+}
+
+.openSource {
+  transition: all 0.2s ease;
+  > * {
+    transition: all 0.2s ease;
+  }
 }
 
 @media screen and (max-width: 1024px) {

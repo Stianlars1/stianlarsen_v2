@@ -6,6 +6,7 @@
   border: 1px solid hsl(var(--border));
   outline: 1px solid hsl(var(--border));
   width: fit-content;
+  cursor: pointer;
 
   &:hover {
     background-color: hsl(var(--secondary) / 0.75);

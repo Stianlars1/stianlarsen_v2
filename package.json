@@ -14,7 +14,7 @@
     "@stianlarsen/border-beam": "^1.0.9",
     "@stianlarsen/copy-to-clipboard": "^1.0.4",
     "@stianlarsen/meteors": "^1.0.9",
-    "@stianlarsen/react-code-preview": "^1.0.21",
+    "@stianlarsen/react-code-preview": "^1.1.3",
     "@stianlarsen/react-fade-effects": "^1.0.6",
     "@stianlarsen/react-light-beam": "^1.0.10",
     "next": "14.2.15",

@@ -16,6 +16,7 @@ export interface OpenSourceType {
   npmUrl: string;
   packageName: string;
   downloads?: number | null;
+  showExamples?: boolean;
 }
 export const open_source_projects_map: OpenSourceType[] = [
   react_ui_kit,

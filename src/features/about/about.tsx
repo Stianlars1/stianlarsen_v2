@@ -1,5 +1,8 @@
 import Link from "next/link";
 import styles from "./css/about.module.css";
+
+const TASKBUDDY_URL = "https://taskbuddy.dev/";
+const TINIFY_URL = "https://tinify.dev/";
 export const About = () => {
   return (
     <section className={styles.section}>
@@ -18,14 +21,18 @@ export const About = () => {
           a SoundCloud clone to launching{" "}
           <Link
             aria-label="Link to Stian Larsen's own task management app located at TaskBuddy.dev"
-            href={"https://taskbuddy.dev/"}
+            href={TASKBUDDY_URL}
+            target="_blank"
+            rel="noreferrer"
           >
             TaskBuddy.dev
           </Link>{" "}
           and{" "}
           <Link
             aria-label="Link to Stian Larsen's image processing tool at Tinify.dev"
-            href={"https://taskbuddy.dev/"}
+            href={TINIFY_URL}
+            target="_blank"
+            rel="noreferrer"
           >
             Tinify.dev
           </Link>{" "}
@@ -35,6 +42,8 @@ export const About = () => {
           <Link
             aria-label="Link to nextjs org site, the provider of the React framework"
             href={"https://nextjs.org/"}
+            target="_blank"
+            rel="noreferrer"
           >
             next
           </Link>{" "}
