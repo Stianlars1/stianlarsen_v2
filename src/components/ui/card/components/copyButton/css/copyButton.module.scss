@@ -1,18 +1,22 @@
 .copyButton {
   padding: 6px 12px;
   border-radius: 4px;
-  background-color: hsl(var(--secondary));
-  color: hsl(var(--secondary-foreground));
-  border: 1px solid hsl(var(--border));
-  outline: 1px solid hsl(var(--border));
   width: fit-content;
   cursor: pointer;
+  display: flex;
 
-  &:hover {
-    background-color: hsl(var(--secondary) / 0.75);
-  }
-
+  align-items: center;
+  gap: 0.5rem;
   &:active {
     transform: scale(0.95);
+  }
+}
+
+.notCopied {
+  transition: all 0.2s ease;
+  &:hover {
+    & span:last-child {
+      transform: translateX(-0.25rem);
+    }
   }
 }

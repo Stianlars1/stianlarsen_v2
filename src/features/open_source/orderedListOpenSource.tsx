@@ -1,9 +1,10 @@
 "use client";
-import { OpenSourceCard } from "@/components/ui/card/card";
+import { OpenSourceCard } from "@/components/ui/card/openSourceCard";
 import { OrderedList } from "@/components/ui/orderedList/orderedList";
 import { OpenSourceType } from "@/data/open_source/openSource";
 import { useState } from "react";
 import styles from "./css/opensourcelist.module.css";
+
 export const OrderedListOpenSource = ({
   openSourceProjects,
 }: {

@@ -38,18 +38,12 @@ export const OpenSourceCard = (project: OpenSourceType) => {
   const isLightBeamCard = packageName === "@stianlarsen/react-light-beam";
   const isCodePreviewCard = packageName === "@stianlarsen/react-code-preview";
 
-  if (showExamples && isCodePreviewCard) {
+  if (showExamples && (isCodePreviewCard || isCopyCard)) {
     return (
       <li
-        className={`${styles.openSource} ${
-          showExamples && isReactGradientAnimationCard
-            ? styles.gradientLinkBg
-            : ""
-        } ${showExamples && isCodePreviewCard ? styles.codePreviewCard : ""}`}
+        key={packageName}
+        className={`${styles.openSource}  ${showExamples && (isCodePreviewCard || isCopyCard) ? styles.noHoverCard : ""}`}
       >
-        {showExamples && isLightBeamCard && (
-          <Beam className={styles.lightBeam} />
-        )}
         <header className={styles.header}>
           <span>{publishDate}</span>
 
@@ -61,128 +55,104 @@ export const OpenSourceCard = (project: OpenSourceType) => {
         </header>
 
         <div className={styles.content}>
-          <h3
-            className={`${styles.title} ${
-              showExamples && isReactFadeEffectsCard ? styles.fadeTitle : ""
-            } ${showExamples && isMeteorsCard ? styles.meteorsTitle : ""}`}
-          >
-            <Link href={websiteUrl ? websiteUrl : npmUrl}>
-              {showExamples && isReactFadeEffectsCard && (
-                <OpenSourceFadeWordsTitle duration={1} title={title} />
-              )}
-
-              {!isReactFadeEffectsCard && title}
+          <h3 className={styles.title}>
+            <Link
+              className={styles.linkTitle}
+              href={websiteUrl ? websiteUrl : npmUrl}
+            >
+              {title}
 
               <LuExternalLink className={styles.titleLink} />
             </Link>
           </h3>
 
-          {showExamples && isReactFadeEffectsCard && (
-            <div className={styles.description}>
-              <OpenSourceFadeWordsDesc title={description} />
-            </div>
-          )}
-
           {!isReactFadeEffectsCard && (
-            <p
-              className={`${styles.description} ${
-                isReactGradientAnimationCard ? styles.gradientDescription : ""
-              } ${isMeteorsCard ? styles.meteorsDescription : ""} ${
-                isLightBeamCard ? styles.lightBeamDesc : ""
-              }`}
-            >
-              {description}
-            </p>
+            <p className={styles.description}>{description}</p>
           )}
 
           {showExamples && isCopyCard && (
-            <CopyButton text={`Copy was successfull🎉`} />
+            <CopyButton
+              className={styles.copyCardButton}
+              text={`Copy was successfull🎉`}
+            />
           )}
           {showExamples && isCodePreviewCard && <PreviewCode />}
         </div>
-
-        {showExamples && isReactGradientAnimationCard && (
-          <ReactGradientAnimationBackground className={styles.gradientBg} />
-        )}
-
-        {showExamples && isMeteorsCard && <MeteorsBackground />}
-
-        {showExamples && isBorderBeamCard && <OpenSourceBorderBeam />}
       </li>
     );
   }
+
   return (
-    <>
-      <Link
-        href={websiteUrl ? websiteUrl : npmUrl}
-        className={`${styles.openSource} ${
-          showExamples && isReactGradientAnimationCard
-            ? styles.gradientLinkBg
-            : ""
-        }`}
-      >
-        {showExamples && isLightBeamCard && (
-          <Beam className={styles.lightBeam} />
+    <Link
+      href={websiteUrl ? websiteUrl : npmUrl}
+      className={`${styles.openSource} ${
+        showExamples && isReactGradientAnimationCard
+          ? styles.gradientLinkBg
+          : ""
+      }`}
+    >
+      {showExamples && isLightBeamCard && <Beam className={styles.lightBeam} />}
+      <header className={styles.header}>
+        <span>{publishDate}</span>
+
+        {downloads && (
+          <div className={styles.downloadsBadge}>
+            <span>{downloads.toLocaleString()} downloads last month</span>
+          </div>
         )}
-        <header className={styles.header}>
-          <span>{publishDate}</span>
+      </header>
 
-          {downloads && (
-            <div className={styles.downloadsBadge}>
-              <span>{downloads.toLocaleString()} downloads last month</span>
-            </div>
-          )}
-        </header>
-
-        <div className={styles.content}>
-          <h3
-            className={`${styles.title} ${
-              showExamples && isReactFadeEffectsCard ? styles.fadeTitle : ""
-            } ${showExamples && isMeteorsCard ? styles.meteorsTitle : ""}`}
-          >
-            {showExamples && isReactFadeEffectsCard && (
-              <OpenSourceFadeWordsTitle duration={1} title={title} />
-            )}
-
-            {!isReactFadeEffectsCard && title}
-
-            <LuExternalLink className={styles.titleLink} />
-          </h3>
-
+      <div className={styles.content}>
+        <h3
+          className={`${styles.title} ${
+            showExamples && isReactFadeEffectsCard ? styles.fadeTitle : ""
+          } ${showExamples && isMeteorsCard ? styles.meteorsTitle : ""}`}
+        >
           {showExamples && isReactFadeEffectsCard && (
-            <div className={styles.description}>
-              <OpenSourceFadeWordsDesc title={description} />
-            </div>
+            <OpenSourceFadeWordsTitle duration={1} title={title} />
           )}
 
-          {!isReactFadeEffectsCard && (
-            <p
-              className={`${styles.description} ${
-                showExamples && isReactGradientAnimationCard
-                  ? styles.gradientDescription
-                  : ""
-              } ${showExamples && isMeteorsCard ? styles.meteorsDescription : ""} ${
-                showExamples && isLightBeamCard ? styles.lightBeamDesc : ""
-              }`}
-            >
-              {description}
-            </p>
-          )}
+          {(!isReactFadeEffectsCard ||
+            (isReactFadeEffectsCard && !showExamples)) &&
+            title}
 
-          {showExamples && isCopyCard && (
-            <CopyButton text={`Copy was successfull🎉`} />
-          )}
-          {showExamples && isCodePreviewCard && <PreviewCode />}
-        </div>
+          <LuExternalLink className={styles.titleLink} />
+        </h3>
 
-        {showExamples && isReactGradientAnimationCard && (
-          <ReactGradientAnimationBackground className={styles.gradientBg} />
+        {showExamples && isReactFadeEffectsCard && (
+          <div className={styles.description}>
+            <OpenSourceFadeWordsDesc title={description} />
+          </div>
         )}
 
-        {showExamples && isMeteorsCard && <MeteorsBackground />}
+        {(!isReactFadeEffectsCard ||
+          (isReactFadeEffectsCard && !showExamples)) && (
+          <p
+            className={`${styles.description} ${
+              showExamples && isReactGradientAnimationCard
+                ? styles.gradientDescription
+                : ""
+            } ${showExamples && isMeteorsCard ? styles.meteorsDescription : ""} ${
+              showExamples && isLightBeamCard ? styles.lightBeamDesc : ""
+            }`}
+          >
+            {description}
+          </p>
+        )}
 
-        {showExamples && isBorderBeamCard && <OpenSourceBorderBeam />}
-      </Link>
-    </>
+        {showExamples && isCopyCard && (
+          <CopyButton text={`Copy was successfull🎉`} />
+        )}
+        {showExamples && isCodePreviewCard && <PreviewCode />}
+      </div>
+
+      {showExamples && isReactGradientAnimationCard && (
+        <ReactGradientAnimationBackground className={styles.gradientBg} />
+      )}
+
+      {showExamples && isMeteorsCard && <MeteorsBackground />}
+
+      {showExamples && isBorderBeamCard && <OpenSourceBorderBeam />}
+    </Link>
   );
 };

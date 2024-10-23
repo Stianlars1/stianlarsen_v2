@@ -7,8 +7,9 @@ export const Beam = ({ className = "" }: { className: string }) => {
       className={className}
       colorLightmode="hsl(var(--purple))"
       colorDarkmode="hsl(var(--blue))"
-      fullWidth={0.8}
+      fullWidth={0.98}
       scrollElement={typeof window !== "undefined" ? window : undefined}
+      maskLightByProgress={true}
     />
   );
 };

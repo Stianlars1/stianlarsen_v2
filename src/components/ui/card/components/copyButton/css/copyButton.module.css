@@ -1,17 +1,21 @@
 .copyButton {
   padding: 6px 12px;
   border-radius: 4px;
-  background-color: hsl(var(--secondary));
-  color: hsl(var(--secondary-foreground));
-  border: 1px solid hsl(var(--border));
-  outline: 1px solid hsl(var(--border));
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
-}
-.copyButton:hover {
-  background-color: hsl(var(--secondary) / 0.75);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .copyButton:active {
   transform: scale(0.95);
-} /*# sourceMappingURL=copyButton.module.css.map */
+}
+
+.notCopied {
+  transition: all 0.2s ease;
+}
+.notCopied:hover span:last-child {
+  transform: translateX(-0.25rem);
+}
+
+/*# sourceMappingURL=copyButton.module.css.map */

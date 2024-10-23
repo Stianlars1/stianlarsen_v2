@@ -1,1 +1,1 @@
-{"version":3,"sources":["copyButton.module.scss","copyButton.module.css"],"names":[],"mappings":"AAAA;EACE,iBAAA;EACA,kBAAA;EACA,uCAAA;EACA,uCAAA;EACA,oCAAA;EACA,qCAAA;EACA,uBAAA;EAAA,kBAAA;EACA,eAAA;ACCF;ADCE;EACE,4CAAA;ACCJ;ADEE;EACE,sBAAA;ACAJ","file":"copyButton.module.css"}
+{"version":3,"sourceRoot":"","sources":["copyButton.module.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA;EACA;EAEA;EACA;;AACA;EACE;;;AAIJ;EACE;;AAEE;EACE","file":"copyButton.module.css"}

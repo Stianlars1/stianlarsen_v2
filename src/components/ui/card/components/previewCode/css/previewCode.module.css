@@ -5,10 +5,13 @@
   border-radius: calc(var(--radius) - 2px);
   border: 1px solid hsl(var(--border));
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 .codePreviewDemoButton:hover {
-  background-color: hsl(var(--background) / 0.5);
+  background-color: hsl(var(--foreground) / 0.25);
 }
 .codePreviewDemoButton:active {
   transform: scale(0.95);
-} /*# sourceMappingURL=previewCode.module.css.map */
+}
+
+/*# sourceMappingURL=previewCode.module.css.map */

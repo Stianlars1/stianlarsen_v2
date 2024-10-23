@@ -47,7 +47,6 @@
   height: 100%;
   font-size: 0.75rem;
   font-weight: 600;
-  width: -moz-fit-content;
   width: fit-content;
   color: hsl(var(--foreground) / 1);
 }
@@ -58,6 +57,8 @@
   flex-direction: column;
   gap: 0.5rem;
   position: relative;
+  width: 100%;
+  min-width: 0;
 }
 .experience .content .title,
 .project .content .title,
@@ -109,7 +110,6 @@
 .openSource .content .meteorsDescription,
 .openSource .content .meteorsTitle {
   background-color: transparent;
-  -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
 }
 .experience .content .descriptionList,
@@ -145,7 +145,6 @@
 .openSource .techList .techItem {
   list-style-type: none !important;
   padding: 6px 12px;
-  width: -moz-fit-content;
   width: fit-content;
   background-color: hsl(var(--card));
   color: hsl(var(--card-foreground) / 0.85);
@@ -169,17 +168,17 @@
   background-color: hsl(var(--background) / 0.45);
 }
 .gradientLinkBg:hover {
-  background-color: hsl(var(--muted) / 1);
+  background-color: hsl(var(--muted) / 0.9);
 }
 .gradientLinkBg:hover .gradientBg {
-  opacity: 0 !important;
+  opacity: 0.1 !important;
 }
 
 .gradientBg {
   transition: all 0.2s ease;
 }
 .gradientBg:hover {
-  opacity: 0 !important;
+  opacity: 0.1 !important;
 }
 
 .downloadsBadge {
@@ -187,14 +186,16 @@
   border-radius: 4px;
   font-size: 10px;
   font-weight: 600;
-  border: 1px solid hsl(var(--border));
+  border: 0.75px solid hsl(var(--foreground) / 0.25);
   background-color: hsl(var(--muted));
   color: hsl(var(--muted-foreground));
 }
 
 .lightBeam {
   position: absolute;
-  width: 100%;
+  height: 100% !important;
+  width: 100% !important;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
@@ -211,10 +212,42 @@
 .openSource > * {
   transition: all 0.2s ease;
 }
+.openSource .copyCardButton {
+  background-color: hsl(var(--background) / 0.75);
+  border: 1px solid hsl(var(--foreground) / 0.25);
+  color: hsl(var(--foreground));
+}
+.openSource:hover .downloadsBadge {
+  background-color: hsl(var(--background) / 0.75);
+}
+.openSource:hover .copyCardButton {
+  background-color: hsl(var(--background) / 1);
+}
+.openSource:hover .copyCardButton:hover {
+  background-color: hsl(var(--background) / 0.47);
+}
 
 @media screen and (max-width: 1024px) {
   .project,
   .experience {
     grid-template-columns: 25% 1fr;
   }
-} /*# sourceMappingURL=card.module.css.map */
+}
+@media screen and (max-width: 768px) {
+  .experience,
+  .project,
+  .openSource {
+    display: flex;
+    flex-direction: column;
+  }
+  .experience .header,
+  .project .header,
+  .openSource .header {
+    min-width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/*# sourceMappingURL=card.module.css.map */
