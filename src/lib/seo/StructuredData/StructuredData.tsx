@@ -1,5 +1,4 @@
 // src/components/seo/StructuredData/StructuredData.tsx
-import Script from "next/script";
 import {
     breadcrumbSchema,
     faqSchema,
@@ -15,142 +14,84 @@ export const StructuredDataScripts = () => {
     return (
         <>
             {/* Person Schema - Core identity */}
-            <Script
+            <script
                 id="person-schema"
                 type="application/ld+json"
-                strategy="afterInteractive"
+
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(personSchema)
+                    __html: JSON.stringify(personSchema, null, 0)
                 }}
             />
 
             {/* Website Schema */}
-            <Script
+            <script
                 id="website-schema"
                 type="application/ld+json"
-                strategy="afterInteractive"
+
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(websiteSchema)
+                    __html: JSON.stringify(websiteSchema, null, 0)
                 }}
             />
 
             {/* Portfolio Schema */}
-            <Script
+            <script
                 id="portfolio-schema"
                 type="application/ld+json"
-                strategy="afterInteractive"
+
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(portfolioSchema)
+                    __html: JSON.stringify(portfolioSchema, null, 0)
                 }}
             />
 
             {/* Professional Service Schema */}
-            <Script
+            <script
                 id="service-schema"
                 type="application/ld+json"
-                strategy="afterInteractive"
+
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(professionalServiceSchema)
+                    __html: JSON.stringify(professionalServiceSchema, null, 0)
                 }}
             />
 
             {/* Organization Schema */}
-            <Script
+            <script
                 id="organization-schema"
                 type="application/ld+json"
-                strategy="afterInteractive"
+
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(organizationSchema)
+                    __html: JSON.stringify(organizationSchema, null, 0)
                 }}
             />
 
             {/* Major Projects Schema */}
             {majorProjectsSchema.map((schema, index) => (
-                <Script
+                <script
                     key={`project-${index}`}
                     id={`project-schema-${index}`}
                     type="application/ld+json"
-                    strategy="afterInteractive"
+
                     dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(schema)
+                        __html: JSON.stringify(schema, null, 0)
                     }}
                 />
             ))}
 
             {/* Breadcrumb Schema */}
-            <Script
+            <script
                 id="breadcrumb-schema"
                 type="application/ld+json"
-                strategy="afterInteractive"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(breadcrumbSchema)
+                    __html: JSON.stringify(breadcrumbSchema, null, 0)
                 }}
             />
 
             {/* FAQ Schema */}
-            <Script
+            <script
                 id="faq-schema"
                 type="application/ld+json"
-                strategy="afterInteractive"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(faqSchema)
-                }}
-            />
 
-            {/* Additional Portfolio Sections Schema */}
-            <Script
-                id="portfolio-sections-schema"
-                type="application/ld+json"
-                strategy="afterInteractive"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "ItemList",
-                        name: "Stian Larsen Portfolio Sections",
-                        description: "Main sections of Stian Larsen's professional portfolio",
-                        itemListElement: [
-                            {
-                                "@type": "ListItem",
-                                position: 1,
-                                item: {
-                                    "@type": "AboutPage",
-                                    name: "About Stian Larsen",
-                                    url: "https://stianlarsen.com#about",
-                                    description: "Professional background and expertise"
-                                }
-                            },
-                            {
-                                "@type": "ListItem",
-                                position: 2,
-                                item: {
-                                    "@type": "WebPage",
-                                    name: "Professional Experience",
-                                    url: "https://stianlarsen.com#experience",
-                                    description: "Work history and professional roles"
-                                }
-                            },
-                            {
-                                "@type": "ListItem",
-                                position: 3,
-                                item: {
-                                    "@type": "WebPage",
-                                    name: "Development Projects",
-                                    url: "https://stianlarsen.com#projects",
-                                    description: "Web applications and software projects"
-                                }
-                            },
-                            {
-                                "@type": "ListItem",
-                                position: 4,
-                                item: {
-                                    "@type": "WebPage",
-                                    name: "Open Source Contributions",
-                                    url: "https://stianlarsen.com#open-source",
-                                    description: "NPM packages and open source projects"
-                                }
-                            }
-                        ]
-                    })
+                    __html: JSON.stringify(faqSchema, null, 0)
                 }}
             />
         </>

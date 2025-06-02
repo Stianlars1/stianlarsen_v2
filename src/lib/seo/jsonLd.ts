@@ -13,8 +13,8 @@ export const personSchema = {
     alternateName: ["Stian Lars", "Stian L", "@stianlars1", "@litehode"],
     jobTitle: ME.workingTitle,
     description: "Passionate Full Stack Web Developer from Oslo, Norway. Creator of TaskBuddy.dev, Tinify.dev, and multiple open-source packages. Expert in TypeScript, React, Next.js, Kotlin, and Spring Boot.",
-    email: ME.email,
-    telephone: ME.phoneNumberString,
+    email: `mailto:${ME.email}`,
+    telephone: `+47${ME.phoneNumberString.replace(/\s/g, '').replace(/^\+47/, '')}`, // Remove duplicate +47
     url: "https://stianlarsen.com",
     image: {
         "@type": "ImageObject",
@@ -43,7 +43,7 @@ export const personSchema = {
         "https://www.linkedin.com/in/stianlars1",
         "https://www.instagram.com/stianlarsen",
         "https://www.x.com/litehode",
-        "https://www.npmjs.com/~stianlars1",
+        "https://www.npmjs.com/~stianlarsen",
     ],
     knowsAbout: [
         "Full Stack Development",
@@ -70,6 +70,7 @@ export const personSchema = {
     hasOccupation: {
         "@type": "Occupation",
         name: "Full Stack Web Developer",
+        description: "Professional full stack web developer specializing in modern web technologies",
         occupationLocation: {
             "@type": "City",
             name: "Oslo, Norway"
@@ -77,7 +78,17 @@ export const personSchema = {
         skills: [
             "TypeScript", "React", "Next.js", "Kotlin", "Spring Boot",
             "PostgreSQL", "AWS", "JavaScript", "CSS", "HTML", "Git"
-        ]
+        ],
+        estimatedSalary: {
+            "@type": "MonetaryAmount",
+            currency: "NOK",
+            value: {
+                "@type": "QuantitativeValue",
+                minValue: 650000,
+                maxValue: 1000000,
+                unitText: "YEAR"
+            }
+        }
     },
     worksFor: {
         "@type": "Organization",
@@ -95,12 +106,6 @@ export const personSchema = {
         name: "Computer Science Degree",
         description: "Bachelor's degree in Computer Science"
     },
-    award: [
-        "Creator of TaskBuddy.dev - Task Management Application",
-        "Creator of Tinify.dev - Image Optimization Service",
-        "Open Source Package Maintainer - 8+ NPM packages",
-        "2+ Years Professional Development Experience"
-    ]
 };
 
 // Website Schema for better search understanding
@@ -136,26 +141,29 @@ export const websiteSchema = {
     }
 };
 
-// Portfolio Creative Work Schema
+// Portfolio WebPage Schema (better than CreativeWork for portfolios)
 export const portfolioSchema = {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
+    "@type": "WebPage",
     "@id": "https://stianlarsen.com#portfolio",
     name: "Stian Larsen Development Portfolio",
     alternateName: "Full Stack Developer Portfolio - Stian Larsen",
     description: "Comprehensive portfolio showcasing full stack web development projects, open source contributions, and professional experience. Features projects like TaskBuddy.dev, Tinify.dev, and 8+ open source NPM packages.",
-    creator: {
+    url: "https://stianlarsen.com",
+    mainEntity: {
         "@id": "https://stianlarsen.com#person"
     },
     author: {
         "@id": "https://stianlarsen.com#person"
     },
+    creator: {
+        "@id": "https://stianlarsen.com#person"
+    },
     dateCreated: "2024-01-01",
     dateModified: new Date().toISOString(),
     datePublished: "2024-01-01",
-    url: "https://stianlarsen.com",
-    mainEntity: {
-        "@id": "https://stianlarsen.com#person"
+    isPartOf: {
+        "@id": "https://stianlarsen.com#website"
     },
     about: [
         "Web Development",
@@ -171,15 +179,23 @@ export const portfolioSchema = {
     ],
     genre: ["Technology", "Software Development", "Web Development"],
     workExample: projects.slice(0, 5).map(project => ({
-        "@type": "SoftwareApplication",
+        "@type": "WebApplication",
         name: project.title,
         description: typeof project.description === 'string' ? project.description : project.title,
         url: project.websiteUrl,
-        applicationCategory: "WebApplication",
+        applicationCategory: "DeveloperApplication",
         datePublished: project.publishDate,
         author: {
             "@id": "https://stianlarsen.com#person"
-        }
+        },
+        operatingSystem: "Web Browser",
+        offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock"
+        },
+        isAccessibleForFree: true
     }))
 };
 
@@ -245,16 +261,17 @@ export const professionalServiceSchema = {
     }
 };
 
-// Major Projects Schema
+// Major Projects Schema - Using WebApplication for web projects
 export const majorProjectsSchema = projects.slice(0, 3).map(project => ({
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "WebApplication",
     name: project.title,
     description: typeof project.description === 'string' ? project.description : `Advanced web application: ${project.title}`,
     url: project.websiteUrl,
     applicationCategory: "WebApplication",
     applicationSubCategory: "ProductivityApplication",
     operatingSystem: "Web Browser",
+    browserRequirements: "Requires JavaScript. Requires HTML5.",
     softwareVersion: "Latest",
     datePublished: project.publishDate,
     dateModified: new Date().toISOString(),
@@ -273,6 +290,12 @@ export const majorProjectsSchema = projects.slice(0, 3).map(project => ({
         availability: "https://schema.org/InStock"
     },
     isAccessibleForFree: true,
+    featureList: [
+        "Modern Web Technologies",
+        "Responsive Design",
+        "Cross-browser Compatibility",
+        "Mobile-friendly Interface"
+    ],
     ...(project.githubUrl && {
         codeRepository: project.githubUrl
     })
