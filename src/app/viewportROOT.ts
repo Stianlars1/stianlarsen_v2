@@ -1,7 +1,7 @@
-// src/app/viewport.ts
+// src/app/viewportROOT.ts
 import type {Viewport} from "next";
 
-export const viewport: Viewport = {
+export const viewportROOT: Viewport = {
     // Ensures proper width and initial scale on mobile devices
     width: "device-width",
     initialScale: 1,
@@ -20,7 +20,7 @@ export const viewport: Viewport = {
     // Color scheme preference for better system integration
     colorScheme: "light dark",
 
-    // Ensure proper viewport height on mobile browsers
+    // Ensure proper viewportROOT height on mobile browsers
     // This helps with mobile browser navigation bars
     viewportFit: "cover",
 

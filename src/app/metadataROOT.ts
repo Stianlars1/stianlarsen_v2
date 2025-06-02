@@ -1,8 +1,8 @@
-// src/app/metadata.ts
+// src/app/metadataROOT.ts
 import type {Metadata} from "next";
 import {ME} from "@/data/about_me/me";
 
-export const metadata: Metadata = {
+export const metadataROOT: Metadata = {
   // Enhanced title structure for maximum SEO impact
   title: {
     default: "Stian Larsen | Full Stack Web Developer & Software Engineer | Oslo, Norway",
@@ -180,7 +180,7 @@ export const metadata: Metadata = {
     },
   },
 
-  // Professional metadata
+  // Professional metadataROOT
   authors: [
     {
       name: ME.fullName,
@@ -233,7 +233,7 @@ export const metadata: Metadata = {
   category: "Technology",
   classification: "Portfolio Website",
 
-  // Comprehensive additional metadata for enhanced SEO
+  // Comprehensive additional metadataROOT for enhanced SEO
   other: {
     // Personal/Professional identity
     "profile:first_name": ME.firstName,
@@ -279,7 +279,7 @@ export const metadata: Metadata = {
     "portfolio.github": "https://github.com/Stianlars1",
     "portfolio.linkedin": "https://www.linkedin.com/in/stianlars1",
 
-    // Mobile and app metadata
+    // Mobile and app metadataROOT
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
