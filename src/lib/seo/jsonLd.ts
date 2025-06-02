@@ -1,405 +1,141 @@
-// src/lib/seo/jsonLd.ts
-import {ME} from "@/data/about_me/me";
-import {projects} from "@/data/projects/projects";
-
-// Person Schema - Core identity for search engines
-export const personSchema = {
+export const portfolioJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://stianlarsen.com#person",
-    name: ME.fullName,
-    givenName: ME.firstName,
-    familyName: ME.lastName,
-    alternateName: ["Stian Lars", "Stian L", "@stianlars1", "@litehode"],
-    jobTitle: ME.workingTitle,
-    description: "Passionate Full Stack Web Developer from Oslo, Norway. Creator of TaskBuddy.dev, Tinify.dev, and multiple open-source packages. Expert in TypeScript, React, Next.js, Kotlin, and Spring Boot.",
-    email: `mailto:${ME.email}`,
-    telephone: `+47${ME.phoneNumberString.replace(/\s/g, '').replace(/^\+47/, '')}`, // Remove duplicate +47
-    url: "https://stianlarsen.com",
-    image: {
-        "@type": "ImageObject",
-        url: "https://stianlarsen.com/stian/STIAN_PHOTO.jpg",
-        width: 400,
-        height: 400,
-        caption: "Professional photo of Stian Larsen, Full Stack Web Developer"
-    },
-    address: {
-        "@type": "PostalAddress",
-        addressLocality: "Oslo",
-        addressRegion: "Oslo",
-        addressCountry: "NO",
-        postalCode: "0150",
-    },
-    nationality: {
-        "@type": "Country",
-        name: "Norway"
-    },
-    birthPlace: {
-        "@type": "Place",
-        name: "Norway"
-    },
-    sameAs: [
-        "https://github.com/Stianlars1",
-        "https://www.linkedin.com/in/stianlars1",
-        "https://www.instagram.com/stianlarsen",
-        "https://www.x.com/litehode",
-        "https://www.npmjs.com/~stianlarsen",
-    ],
-    knowsAbout: [
-        "Full Stack Development",
-        "TypeScript Programming",
-        "React Development",
-        "Next.js Framework",
-        "Kotlin Programming",
-        "Spring Boot Framework",
-        "PostgreSQL Database",
-        "AWS Cloud Services",
-        "Web Development",
-        "Frontend Development",
-        "Backend Development",
-        "UI/UX Design",
-        "Open Source Development",
-        "NPM Package Development",
-        "JavaScript Programming",
-        "CSS/SCSS Styling",
-        "REST API Development",
-        "Database Design",
-        "Agile Development",
-        "Git Version Control"
-    ],
-    hasOccupation: {
-        "@type": "Occupation",
-        name: "Full Stack Web Developer",
-        description: "Professional full stack web developer specializing in modern web technologies",
-        occupationLocation: {
-            "@type": "City",
-            name: "Oslo, Norway"
-        },
-        skills: [
-            "TypeScript", "React", "Next.js", "Kotlin", "Spring Boot",
-            "PostgreSQL", "AWS", "JavaScript", "CSS", "HTML", "Git"
-        ],
-        estimatedSalary: {
-            "@type": "MonetaryAmount",
-            currency: "NOK",
-            value: {
-                "@type": "QuantitativeValue",
-                minValue: 650000,
-                maxValue: 1000000,
-                unitText: "YEAR"
-            }
-        }
-    },
-    worksFor: {
-        "@type": "Organization",
-        name: "SpareBank 1 Utvikling",
-        url: "https://www.sparebank1.no",
-        description: "Leading Norwegian financial services company",
-        address: {
-            "@type": "PostalAddress",
-            addressLocality: "Oslo",
-            addressCountry: "Norway"
-        }
-    },
-    alumniOf: {
-        "@type": "EducationalOrganization",
-        name: "Computer Science Degree",
-        description: "Bachelor's degree in Computer Science"
-    },
-};
-
-// Website Schema for better search understanding
-export const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://stianlarsen.com#website",
-    name: "Stian Larsen Portfolio",
-    alternateName: "Stian Larsen - Full Stack Developer Portfolio",
-    url: "https://stianlarsen.com",
-    description: "Professional portfolio of Stian Larsen, Full Stack Web Developer from Oslo, Norway. Showcasing web development projects, open source contributions, and professional experience.",
-    inLanguage: "en-US",
-    isAccessibleForFree: true,
-    author: {
-        "@id": "https://stianlarsen.com#person"
-    },
-    creator: {
-        "@id": "https://stianlarsen.com#person"
-    },
-    copyrightHolder: {
-        "@id": "https://stianlarsen.com#person"
-    },
-    copyrightYear: new Date().getFullYear(),
-    dateCreated: "2024-01-01",
-    dateModified: new Date().toISOString(),
-    potentialAction: {
-        "@type": "SearchAction",
-        target: {
-            "@type": "EntryPoint",
-            urlTemplate: "https://stianlarsen.com?search={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-    }
-};
-
-// Portfolio WebPage Schema (better than CreativeWork for portfolios)
-export const portfolioSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://stianlarsen.com#portfolio",
-    name: "Stian Larsen Development Portfolio",
-    alternateName: "Full Stack Developer Portfolio - Stian Larsen",
-    description: "Comprehensive portfolio showcasing full stack web development projects, open source contributions, and professional experience. Features projects like TaskBuddy.dev, Tinify.dev, and 8+ open source NPM packages.",
-    url: "https://stianlarsen.com",
-    mainEntity: {
-        "@id": "https://stianlarsen.com#person"
-    },
-    author: {
-        "@id": "https://stianlarsen.com#person"
-    },
-    creator: {
-        "@id": "https://stianlarsen.com#person"
-    },
-    dateCreated: "2024-01-01",
-    dateModified: new Date().toISOString(),
-    datePublished: "2024-01-01",
-    isPartOf: {
-        "@id": "https://stianlarsen.com#website"
-    },
-    about: [
-        "Web Development",
-        "Full Stack Development",
-        "TypeScript Programming",
-        "React Development",
-        "Open Source Development"
-    ],
-    keywords: [
-        "portfolio", "web development", "full stack developer",
-        "React", "TypeScript", "Next.js", "Kotlin", "Spring Boot",
-        "Norway developer", "Oslo developer", "TaskBuddy", "Tinify"
-    ],
-    genre: ["Technology", "Software Development", "Web Development"],
-    workExample: projects.slice(0, 5).map(project => ({
-        "@type": "WebApplication",
-        name: project.title,
-        description: typeof project.description === 'string' ? project.description : project.title,
-        url: project.websiteUrl,
-        applicationCategory: "DeveloperApplication",
-        datePublished: project.publishDate,
-        author: {
-            "@id": "https://stianlarsen.com#person"
-        },
-        operatingSystem: "Web Browser",
-        offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD",
-            availability: "https://schema.org/InStock"
-        },
-        isAccessibleForFree: true
-    }))
-};
-
-// Professional Service Schema for freelance work
-export const professionalServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": "https://stianlarsen.com#service",
-    name: "Stian Larsen - Full Stack Web Development Services",
-    description: "Professional full stack web development services including frontend development, backend development, database design, and cloud deployment.",
-    provider: {
-        "@id": "https://stianlarsen.com#person"
-    },
-    areaServed: [
+    "@graph": [
         {
-            "@type": "Country",
-            name: "Norway"
+            "@type": "Person",
+            "@id": "https://stianlarsen.com#person",
+            "name": "Stian Larsen",
+            "givenName": "Stian",
+            "familyName": "Larsen",
+            "jobTitle": "Full Stack Web Developer",
+            "description": "I\u2019m Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at SpareBank 1 Utvikling. With a Bachelor\u2019s degree in Computer Science and over two years of hands-on experience from professional roles and personal projects, I thrive at the intersection of design and backend engineering.",
+            "url": "https://stianlarsen.com",
+            "image": "https://stianlarsen.com/stian/STIAN_PHOTO.jpg",
+            "sameAs": [
+                "https://github.com/Stianlars1",
+                "https://www.linkedin.com/in/stianlars1",
+                "https://www.instagram.com/stianlarsen",
+                "https://www.x.com/litehode"
+            ]
         },
         {
-            "@type": "City",
-            name: "Oslo"
-        }
-    ],
-    serviceType: [
-        "Full Stack Web Development",
-        "Frontend Development",
-        "Backend Development",
-        "React Development",
-        "TypeScript Development",
-        "Database Design",
-        "API Development",
-        "Cloud Deployment"
-    ],
-    hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Web Development Services",
-        itemListElement: [
-            {
-                "@type": "Offer",
-                itemOffered: {
-                    "@type": "Service",
-                    name: "Full Stack Web Development",
-                    description: "Complete web application development using modern technologies"
-                }
-            },
-            {
-                "@type": "Offer",
-                itemOffered: {
-                    "@type": "Service",
-                    name: "React/TypeScript Development",
-                    description: "Frontend development with React and TypeScript"
-                }
-            },
-            {
-                "@type": "Offer",
-                itemOffered: {
-                    "@type": "Service",
-                    name: "Backend API Development",
-                    description: "RESTful API development with Kotlin/Spring Boot"
-                }
-            }
-        ]
-    }
-};
-
-// Major Projects Schema - Using WebApplication for web projects
-export const majorProjectsSchema = projects.slice(0, 3).map(project => ({
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    name: project.title,
-    description: typeof project.description === 'string' ? project.description : `Advanced web application: ${project.title}`,
-    url: project.websiteUrl,
-    applicationCategory: "WebApplication",
-    applicationSubCategory: "ProductivityApplication",
-    operatingSystem: "Web Browser",
-    browserRequirements: "Requires JavaScript. Requires HTML5.",
-    softwareVersion: "Latest",
-    datePublished: project.publishDate,
-    dateModified: new Date().toISOString(),
-    author: {
-        "@id": "https://stianlarsen.com#person"
-    },
-    creator: {
-        "@id": "https://stianlarsen.com#person"
-    },
-    programmingLanguage: project.technologies,
-    runtimePlatform: "Web Browser",
-    offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-        availability: "https://schema.org/InStock"
-    },
-    isAccessibleForFree: true,
-    featureList: [
-        "Modern Web Technologies",
-        "Responsive Design",
-        "Cross-browser Compatibility",
-        "Mobile-friendly Interface"
-    ],
-    ...(project.githubUrl && {
-        codeRepository: project.githubUrl
-    })
-}));
-
-// Breadcrumb Schema for navigation
-export const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-        {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: "https://stianlarsen.com"
+            "@type": "WebSite",
+            "@id": "https://stianlarsen.com#website",
+            "name": "Stian Larsen Portfolio",
+            "url": "https://stianlarsen.com",
+            "description": "Professional portfolio of Stian Larsen, Full Stack Web Developer from Oslo, Norway. Showcasing web development projects, open source contributions, and professional experience.",
+            "author": { "@id": "https://stianlarsen.com#person" },
+            "publisher": { "@id": "https://stianlarsen.com#person" }
         },
         {
-            "@type": "ListItem",
-            position: 2,
-            name: "About",
-            item: "https://stianlarsen.com#about"
+            "@type": "WebPage",
+            "@id": "https://stianlarsen.com#homepage",
+            "name": "Stian Larsen | Full Stack Web Developer",
+            "url": "https://stianlarsen.com",
+            "description": "I\u2019m Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at SpareBank 1 Utvikling.",
+            "isPartOf": { "@id": "https://stianlarsen.com#website" },
+            "author": { "@id": "https://stianlarsen.com#person" },
+            "mainEntity": { "@id": "https://stianlarsen.com#person" }
         },
         {
-            "@type": "ListItem",
-            position: 3,
-            name: "Experience",
-            item: "https://stianlarsen.com#experience"
+            "@type": "WebApplication",
+            "name": "CSS Variables Assistant - JetBrains Plugin",
+            "url": "https://www.css-variables-assistant.dev",
+            "description": "Advanced CSS custom properties plugin for JetBrains IDEs (IntelliJ/WebStorm/PyCharm, etc.) with intelligent autocomplete, live preview, and multi-preprocessor support.",
+            "datePublished": "2025-05-16",
+            "author": { "@id": "https://stianlarsen.com#person" },
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser"
         },
         {
-            "@type": "ListItem",
-            position: 4,
-            name: "Projects",
-            item: "https://stianlarsen.com#projects"
+            "@type": "WebApplication",
+            "name": "Sonio: Advanced Music Platform, just like SoundCloud",
+            "url": "https://sonio.fm",
+            "description": "Developed Sonio, a free web-based music platform that allows users to upload, share, and discover music. Built a robust backend in Kotlin + Spring Boot handling custom authentication and data retrieval, utilizing Postgres and AWS S3 for efficient data storage and retrieval. Implemented advanced audio processing tools using WaveSurfer.js for seamless audio playback and waveform visualization. Created a responsive frontend with Next.js and TypeScript, focusing on a clean and intuitive UI. Deployed the app on AWS Lightsail for scalability and security, designing all UI components from scratch for a user-friendly experience.",
+            "datePublished": "2025-02-01",
+            "author": { "@id": "https://stianlarsen.com#person" },
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser"
         },
         {
-            "@type": "ListItem",
-            position: 5,
-            name: "Open Source",
-            item: "https://stianlarsen.com#open-source"
+            "@type": "WebApplication",
+            "name": "ColorPalette: Create beautiful color palettes with instant code export",
+            "url": "https://colorpalette.dev",
+            "description": "Created ColorPalette, a web application that allows users to generate beautiful color palettes and export them as code snippets for various programming languages.",
+            "datePublished": "2024-12-24",
+            "author": { "@id": "https://stianlarsen.com#person" },
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser"
+        },
+        {
+            "@type": "WebApplication",
+            "name": "Tinify: Advanced Image Optimization Service",
+            "url": "https://tinify.dev",
+            "description": "Developed Tinify, a free web-based image optimization service that compresses, resizes, and crops images to reduce file sizes and enhance website performance. Built a robust backend in Kotlin and Spring Boot, using tools like ImageMagick, pngquant, cjpeg, etc., for efficient image manipulation. Created a responsive frontend with Next.js and TypeScript for seamless UX, and deployed on AWS Lightsail for scalability and security.",
+            "datePublished": "2024-10-13",
+            "author": { "@id": "https://stianlarsen.com#person" },
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser"
+        },
+        {
+            "@type": "WebApplication",
+            "name": "TaskBuddy: Task Management Application",
+            "url": "https://taskbuddy.dev",
+            "description": "Created TaskBuddy, an intuitive task management app to help users organize tasks and boost productivity. Developed the front end with Next.js and TypeScript, and a secure backend in Kotlin + Spring Boot with a PostgreSQL database on AWS. Implemented custom JWT authentication and used Google Cloud Storage for image hosting.",
+            "datePublished": "2024-05-05",
+            "author": { "@id": "https://stianlarsen.com#person" },
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser"
+        },
+        {
+            "@type": "WebApplication",
+            "name": "TaskBuddy Landing Page: Marketing Frontend",
+            "url": "https://taskbuddy.dev",
+            "description": "Designed and developed the marketing landing page for TaskBuddy to engage users and promote the app. Crafted custom illustrations and 3D assets in Figma, implemented a responsive layout with Next.js/TypeScript, and built sections like About Us and Learn More to showcase the app\u2019s value proposition.",
+            "datePublished": "2024-05-05",
+            "author": { "@id": "https://stianlarsen.com#person" },
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser"
+        },
+        {
+            "@type": "WebApplication",
+            "name": "Strek-kode: Text to Barcode Generator",
+            "url": "https://strek-kode.no",
+            "description": "Developed and open-sourced Strek-kode, a free web app that converts text into barcodes. Built with Next.js and TypeScript for high performance, using Firebase for auth and real-time database. Designed an easy-to-use interface for generating barcodes to meet various user needs.",
+            "datePublished": "2024-03-10",
+            "author": { "@id": "https://stianlarsen.com#person" },
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser"
+        },
+        {
+            "@type": "WebApplication",
+            "name": "Skipper\u2019n Utleie: Boat Rental Platform",
+            "url": "https://skipperenutleie.no",
+            "description": "Developed a comprehensive boat rental platform for Skipper\u2019n Utleie to improve business operations. Built with Next.js and TypeScript using Tailwind CSS, integrated Firebase for bookings, users, inventory, and authentication. Created a custom admin dashboard for order tracking, profit monitoring, and inventory management with full CRUD functionality.",
+            "datePublished": "2024-02-20",
+            "author": { "@id": "https://stianlarsen.com#person" },
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser"
+        },
+        {
+            "@type": "WebApplication",
+            "name": "QR-kode.app: Custom QR Code Generator",
+            "url": "https://qr-kode.app",
+            "description": "Created qr-kode.app, a user-friendly platform for generating free custom QR codes with various configuration options. Built with Next.js and TypeScript for a fast frontend experience, used Supabase for backend data management, and styled with Tailwind CSS for a modern responsive UI. Provides an intuitive interface for generating QR codes for personal and business use.",
+            "datePublished": "2024-01-05",
+            "author": { "@id": "https://stianlarsen.com#person" },
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser"
+        },
+        {
+            "@type": "WebApplication",
+            "name": "AudioVisualizer.io: Online Audio Visualization Platform",
+            "url": "https://audiovisualizer.io",
+            "description": "Designed, developed, and deployed AudioVisualizer.io, an online platform for uploading, sharing, and visualizing audio files. Built a RESTful API with Node.js/Express for audio compression and peak generation, used Wavesurfer.js and React for the frontend visualization, and integrated Firebase for auth and database. Enables users to upload tracks and see interactive waveforms like on SoundCloud.",
+            "datePublished": "2023-09-10",
+            "author": { "@id": "https://stianlarsen.com#person" },
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser"
         }
     ]
-};
-
-// FAQ Schema for common questions
-export const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-        {
-            "@type": "Question",
-            name: "Who is Stian Larsen?",
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: "Stian Larsen is a Full Stack Web Developer from Oslo, Norway, with 2+ years of professional experience at SpareBank 1 Utvikling. He holds a Computer Science degree and specializes in TypeScript, React, Next.js, Kotlin, and Spring Boot development."
-            }
-        },
-        {
-            "@type": "Question",
-            name: "What projects has Stian Larsen created?",
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: "Stian Larsen is the creator of TaskBuddy.dev (task management application), Tinify.dev (image optimization service), and 8+ open source NPM packages. He has also developed QR-kode.app, Skipper'n Utleie boat rental platform, and AudioVisualizer.io."
-            }
-        },
-        {
-            "@type": "Question",
-            name: "What technologies does Stian Larsen specialize in?",
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: "Stian Larsen specializes in full stack development with expertise in TypeScript, React, Next.js for frontend development, and Kotlin with Spring Boot for backend development. He also works with PostgreSQL, AWS, Firebase, and modern web development tools."
-            }
-        },
-        {
-            "@type": "Question",
-            name: "Is Stian Larsen available for projects?",
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: "Yes, Stian Larsen is available for freelance web development projects and consulting. You can contact him at stian.larsen@mac.com for custom web applications, e-commerce platforms, and software development services."
-            }
-        },
-        {
-            "@type": "Question",
-            name: "Where is Stian Larsen located?",
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: "Stian Larsen is based in Oslo, Norway, and currently works at SpareBank 1 Utvikling. He provides web development services locally in Norway and internationally for remote projects."
-            }
-        }
-    ]
-};
-
-// Organization Schema for current employer
-export const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "SpareBank 1 Utvikling",
-    url: "https://www.sparebank1.no",
-    description: "Leading Norwegian financial services company",
-    address: {
-        "@type": "PostalAddress",
-        addressLocality: "Oslo",
-        addressCountry: "Norway"
-    },
-    employee: {
-        "@id": "https://stianlarsen.com#person"
-    }
-};
+}
