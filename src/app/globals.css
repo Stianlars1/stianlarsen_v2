@@ -2,10 +2,10 @@
   /* Variables */
   --nav-height: 64px;
   --max-width: calc(1280px - (6rem * 2));
+  --transition-time: 0.2s;
   --aside-width: 270px;
   --content-width: 640px;
   --padding: calc(2rem + 8px);
-  --transition-time: 0.2s;
 
   --tag: 262, 44%, 16%;
   --tag-foreground: 262, 92%, 65%;
@@ -13,7 +13,6 @@
   /* custom colors */
   --black: 240 10% 3.9%;
   --white: 0 0% 100%;
-  --activeText: 124 84% 25%;
   --success: 88 50% 53%;
   --purple: 262.1 83.3% 57.8%;
   --purple-foreground: 210 20% 98%;

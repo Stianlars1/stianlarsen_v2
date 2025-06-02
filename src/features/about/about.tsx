@@ -5,7 +5,7 @@ const TASKBUDDY_URL = "https://taskbuddy.dev/";
 const TINIFY_URL = "https://tinify.dev/";
 export const About = () => {
   return (
-    <section className={styles.section}>
+    <section id={"about"} className={styles.section}>
       <header>
         <p>
           I’m <strong style={{ color: "hsl(var(--blue))" }}>Stian</strong>, a

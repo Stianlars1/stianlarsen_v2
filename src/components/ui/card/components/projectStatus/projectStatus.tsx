@@ -1,6 +1,7 @@
-import { checkWebsiteStatus } from "@/app/actions";
-import { Suspense } from "react";
+import {checkWebsiteStatus} from "@/app/actions/actions";
+import {Suspense} from "react";
 import styles from "./css/projectStatus.module.css";
+
 export const ProjectStatus = async ({ url }: { url: string }) => {
   const status = await checkWebsiteStatus(url);
 

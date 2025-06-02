@@ -1,7 +1,8 @@
-import { getNpmDownloads } from "@/app/actions";
+import {getNpmDownloads} from "@/app/actions/actions";
 import Image from "next/image";
-import { Suspense } from "react";
+import {Suspense} from "react";
 import styles from "./css/openSourceDownloadBadge.module.css";
+
 interface OpenSourceDownloadBadgeProps {
   packageName: string;
   period?: "last-week" | "last-month" | "last-day";

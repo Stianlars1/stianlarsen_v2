@@ -1,7 +1,10 @@
-import { Aside } from "@/ui_layout/aside/aside";
-import { PageContainer } from "@/ui_layout/pageContainer/pageContainer";
+import {Aside} from "@/ui_layout/aside/aside";
+import {PageContainer} from "@/ui_layout/pageContainer/pageContainer";
 import localFont from "next/font/local";
 import "./globals.css";
+import {InitialRenders} from "@/ui_layout/InitialRenders";
+import {StructuredDataScripts} from "@/lib/seo/StructuredData/StructuredData";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -21,12 +24,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} `}>
+      <StructuredDataScripts/>
         <PageContainer>
           <Aside />
           {/* <Navbar /> */}
           {children}
           {/* <Footer /> */}
         </PageContainer>
+      <InitialRenders/>
       </body>
     </html>
   );
