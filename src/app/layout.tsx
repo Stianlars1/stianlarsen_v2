@@ -1,8 +1,8 @@
-import {Aside} from "@/ui_layout/aside/aside";
-import {PageContainer} from "@/ui_layout/pageContainer/pageContainer";
+import { Aside } from "@/ui_layout/aside/aside";
+import { PageContainer } from "@/ui_layout/pageContainer/pageContainer";
 import localFont from "next/font/local";
 import "./globals.css";
-import {InitialRenders} from "@/ui_layout/InitialRenders";
+import { InitialRenders } from "@/ui_layout/InitialRenders";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +29,7 @@ export default function RootLayout({
           {children}
           {/* <Footer /> */}
         </PageContainer>
-      <InitialRenders/>
+        <InitialRenders />
       </body>
     </html>
   );
