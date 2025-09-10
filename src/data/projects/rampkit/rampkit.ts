@@ -1,7 +1,7 @@
 import {Project} from "../projects";
 
 export const project_rampkit: Project = {
-    title: "Rampkit",
+    title: "Rampkit - From Hex to Color Palette",
     publishDate: "2025-09-02",
     previewDate: "September 2025",
     description: [
