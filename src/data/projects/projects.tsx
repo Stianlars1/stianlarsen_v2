@@ -9,6 +9,7 @@ import {project_tinify} from "./tinify/tinify";
 import {project_colorPalette} from "@/data/projects/colorPalette/colorPalette";
 import {project_sonio} from "@/data/projects/sonio/sonio";
 import {project_cssVariablesAssistant} from "@/data/projects/cssVariablesAssistant/cssVariablesAssistant";
+import {project_rampkit} from "@/data/projects/rampkit/rampkit";
 
 export interface Project {
     publishDate: string; // e.g., "2023-05-01" (Date when the entry was published)
@@ -21,6 +22,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+    project_rampkit,
     project_cssVariablesAssistant,
     project_sonio,
     project_colorPalette,
