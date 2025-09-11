@@ -1,9 +1,9 @@
-import { Experience } from "@/data/experiences/experiences";
+import { Experience } from "@/features/experience/types";
 import { Project } from "@/data/projects/projects";
 import Link from "next/link";
 import { LuExternalLink } from "react-icons/lu";
 import { ProjectStatus } from "./components/projectStatus/projectStatus";
-import styles from "./css/card.module.css";
+import styles from "./css/card.module.scss";
 
 export const ProjectCard = async (props: Project) => {
   const { websiteUrl, title, description, technologies, previewDate } = props;

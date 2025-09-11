@@ -1,6 +1,4 @@
-// taskbuddy_app.ts
-
-import {Project} from "../projects";
+import { Project } from "../projects";
 
 export const taskbuddy_app: Project = {
   title: "TaskBuddy: Task Management Application",

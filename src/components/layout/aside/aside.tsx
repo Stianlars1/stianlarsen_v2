@@ -3,7 +3,8 @@ import { ME } from "@/data/about_me/me";
 import { Socials } from "@/data/social/social";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./css/aside.module.css";
+import styles from "./css/aside.module.scss";
+
 export const Aside = () => {
   const { fullName, workingTitle } = ME;
   return (

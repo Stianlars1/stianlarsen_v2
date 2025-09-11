@@ -1,19 +1,8 @@
-import { Aside } from "@/ui_layout/aside/aside";
-import { PageContainer } from "@/ui_layout/pageContainer/pageContainer";
-import localFont from "next/font/local";
+import { Aside } from "@/components/layout/aside/aside";
+import { PageContainer } from "@/components/layout/pageContainer/pageContainer";
 import "./globals.css";
-import { InitialRenders } from "@/ui_layout/InitialRenders";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { InitialRenders } from "@/components/layout/InitialRenders";
+import { geistMono, geistSans } from "@/lib/fonts";
 
 export default function RootLayout({
   children,

@@ -1,5 +1,3 @@
-// taskbuddy_landingpage.ts
-
 import { Project } from "../projects";
 
 export const taskbuddy_landingpage: Project = {

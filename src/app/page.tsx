@@ -2,7 +2,7 @@ import { About } from "@/features/about/about";
 import { Experience } from "@/features/experience/experience";
 import { OpenSourceProjects } from "@/features/open_source/open_source";
 import { Projects } from "@/features/projects/projects";
-import { Page } from "@/ui_layout/page/page";
+import { Page } from "@/components/layout/page/page";
 import { HiddenSeoContent } from "@/lib/seo/HiddenSeoContent/HiddenSeoContent";
 import { Metadata, Viewport } from "next";
 import { viewportROOT } from "@/app/viewportROOT";

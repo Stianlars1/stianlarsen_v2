@@ -12,11 +12,12 @@ import {
   OpenSourceFadeWordsDesc,
   OpenSourceFadeWordsTitle,
 } from "./components/react-fade-effects/fadeWordsEffect";
-import styles from "./css/card.module.css";
+import styles from "./css/card.module.scss";
 
 export const OpenSourceCard = (project: OpenSourceType) => {
   const {
     websiteUrl,
+
     title,
     description,
     publishDate,

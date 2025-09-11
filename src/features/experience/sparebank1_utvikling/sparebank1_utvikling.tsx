@@ -1,7 +1,8 @@
 // sparebank1_utvikling.ts
 
 import { ReactNode } from "react";
-import { Experience } from "../experiences";
+import { Experience } from "../types";
+import { hasLeftSparebank1 } from "@/features/experience/utils";
 
 const description: ReactNode = (
   <span>
@@ -17,7 +18,7 @@ const description: ReactNode = (
 export const sparebank1_utvikling: Experience = {
   publishDate: "2023-05-01",
   startDate: "June 2023",
-  endDate: "Present",
+  endDate: hasLeftSparebank1() ? "2025-12-31" : "Present",
   title: "Full Stack Developer",
   company: "SpareBank 1 Utvikling",
   location: "Oslo, Norway",

@@ -1,6 +1,4 @@
-// sonio.ts
-
-import {Project} from "../projects";
+import { Project } from "../projects";
 
 export const project_tinify: Project = {
   title: "Tinify: Advanced Image Optimization Service",
