@@ -18,7 +18,7 @@
     "@stianlarsen/react-fade-effects": "^1.1.0",
     "@stianlarsen/react-light-beam": "^1.0.12",
     "babel-plugin-react-compiler": "^19.1.0-rc.2",
-    "next": "16.0.10",
+    "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-gradient-animation": "^1.0.10",
@@ -32,10 +32,10 @@
     "@types/node": "^20",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
-    "eslint": "^8",
-    "eslint-config-next": "16.0.10",
-    "prettier": "^3.5.3",
-    "typescript": "^5"
+    "eslint": "^9.39.2",
+    "eslint-config-next": "16.1.1",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3"
   },
   "overrides": {
     "@types/react": "19.2.7",
