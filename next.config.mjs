@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
+  reactCompiler: true,
   experimental: {
-    reactCompiler: true,
     viewTransition: true,
   },
   images: {

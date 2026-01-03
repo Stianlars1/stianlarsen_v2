@@ -1,5 +1,5 @@
 import Script from "next/script";
-import {portfolioJsonLd} from "@/lib/seo/jsonLd";
+import { portfolioJsonLd } from "@/lib/seo/jsonLd";
 
 /**
  * NOTE: keep jsonLd in its own file (tree-shakable and testable).
@@ -9,14 +9,14 @@ import {portfolioJsonLd} from "@/lib/seo/jsonLd";
  */
 
 export function PortfolioStructuredData() {
-    return (
-        <Script
-            id="portfolio-jsonld"
-            type="application/ld+json"
-            strategy="afterInteractive"      // SSR-safe, avoids hydration mismatch
-            dangerouslySetInnerHTML={{
-                __html: JSON.stringify(portfolioJsonLd),
-            }}
-        />
-    );
+  return (
+    <Script
+      id="portfolio-jsonld"
+      type="application/ld+json"
+      strategy="afterInteractive" // SSR-safe, avoids hydration mismatch
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(portfolioJsonLd),
+      }}
+    />
+  );
 }

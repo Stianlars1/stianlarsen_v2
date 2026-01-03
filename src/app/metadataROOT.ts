@@ -1,17 +1,18 @@
 // src/app/metadataROOT.ts
-import type {Metadata} from "next";
-import {ME} from "@/data/about_me/me";
+import type { Metadata } from "next";
+import { ME } from "@/data/about_me/me";
 
 export const metadataROOT: Metadata = {
   // Enhanced title structure for maximum SEO impact
   title: {
-    default: "Stian Larsen | Full Stack Web Developer & Software Engineer | Oslo, Norway",
+    default:
+      "Stian Larsen | Full Stack Web Developer & Software Engineer | Oslo, Norway",
     template: "%s | Stian Larsen - Full Stack Developer",
   },
 
   // Comprehensive description optimized for search intent and conversion
   description:
-      "Stian Larsen is a passionate Full Stack Web Developer and Software Engineer based in Oslo, Norway. With 2+ years of professional experience at SpareBank 1 Utvikling and a Computer Science degree, I specialize in TypeScript, React, Next.js, Kotlin, and Spring Boot development. Creator of TaskBuddy.dev task management app, Tinify.dev image optimization service, and 8+ open-source NPM packages. Expert in frontend development, backend APIs, database design, and cloud deployment. Available for freelance web development projects in Norway and internationally.",
+    "Stian Larsen is a passionate Full Stack Web Developer and Software Engineer based in Oslo, Norway. With 2+ years of professional experience at SpareBank 1 Utvikling and a Computer Science degree, I specialize in TypeScript, React, Next.js, Kotlin, and Spring Boot development. Creator of TaskBuddy.dev task management app, Tinify.dev image optimization service, and 8+ open-source NPM packages. Expert in frontend development, backend APIs, database design, and cloud deployment. Available for freelance web development projects in Norway and internationally.",
 
   // Extensive keyword targeting for Norwegian and international searches
   keywords: [
@@ -138,9 +139,10 @@ export const metadataROOT: Metadata = {
     locale: "en_US",
     url: "https://stianlarsen.com/",
     siteName: "Stian Larsen - Full Stack Developer Portfolio",
-    title: "Stian Larsen | Full Stack Web Developer & Software Engineer | Oslo, Norway",
+    title:
+      "Stian Larsen | Full Stack Web Developer & Software Engineer | Oslo, Norway",
     description:
-        "Full Stack Developer from Oslo, Norway 🇳🇴 | Creator of TaskBuddy.dev & Tinify.dev | TypeScript • React • Next.js • Kotlin • Spring Boot | 2+ years at SpareBank 1 | 8+ open source packages | Computer Science graduate | Available for projects",
+      "Full Stack Developer from Oslo, Norway 🇳🇴 | Creator of TaskBuddy.dev & Tinify.dev | TypeScript • React • Next.js • Kotlin • Spring Boot | 2+ years at SpareBank 1 | 8+ open source packages | Computer Science graduate | Available for projects",
     images: [
       {
         url: "https://stianlarsen.com/stian/OG-STIAN.png",
@@ -166,7 +168,7 @@ export const metadataROOT: Metadata = {
     creator: "@litehode",
     title: "Stian Larsen | Full Stack Developer & Software Engineer | Oslo 🇳🇴",
     description:
-        "Full Stack Developer from Oslo, Norway 🇳🇴 | Creator of TaskBuddy.dev & Tinify.dev | TypeScript • React • Kotlin | @SpareBank1 | 8+ NPM packages | Computer Science graduate",
+      "Full Stack Developer from Oslo, Norway 🇳🇴 | Creator of TaskBuddy.dev & Tinify.dev | TypeScript • React • Kotlin | @SpareBank1 | 8+ NPM packages | Computer Science graduate",
     images: ["https://stianlarsen.com/stian/OG-STIAN.png"],
   },
 
@@ -175,8 +177,8 @@ export const metadataROOT: Metadata = {
     canonical: "https://stianlarsen.com/",
     languages: {
       "en-US": "https://stianlarsen.com/",
-      "en": "https://stianlarsen.com/",
-      "no": "https://stianlarsen.com/", // Norwegian users
+      en: "https://stianlarsen.com/",
+      no: "https://stianlarsen.com/", // Norwegian users
     },
   },
 
@@ -209,7 +211,7 @@ export const metadataROOT: Metadata = {
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
-    }
+    },
   },
 
   // Enhanced manifest and icons
@@ -245,7 +247,7 @@ export const metadataROOT: Metadata = {
     "geo.region": "NO-03", // Oslo region code
     "geo.placename": "Oslo",
     "geo.position": "59.9139;10.7522", // Oslo coordinates
-    "ICBM": "59.9139, 10.7522",
+    ICBM: "59.9139, 10.7522",
     "geo.country": "Norway",
     "geo.locality": "Oslo",
 
@@ -268,7 +270,8 @@ export const metadataROOT: Metadata = {
     "professional.availability": "Available for projects",
 
     // Technical capabilities
-    "skills.frontend": "React, Next.js, TypeScript, JavaScript, HTML, CSS, SCSS",
+    "skills.frontend":
+      "React, Next.js, TypeScript, JavaScript, HTML, CSS, SCSS",
     "skills.backend": "Kotlin, Spring Boot, Node.js, PostgreSQL, REST APIs",
     "skills.tools": "Git, AWS, Firebase, Vercel, WebStorm, IntelliJ IDEA",
     "skills.languages": "TypeScript, Kotlin, JavaScript, SQL, HTML, CSS",
@@ -289,11 +292,11 @@ export const metadataROOT: Metadata = {
 
     // Content and language
     "content-language": "en",
-    "language": "English",
-    "distribution": "Global",
-    "rating": "General",
+    language: "English",
+    distribution: "Global",
+    rating: "General",
     "revisit-after": "7 days",
-    "robots": "index,follow",
+    robots: "index,follow",
 
     // Schema.org hints for better structured data
     "schema.person": "https://stianlarsen.com#person",
@@ -302,7 +305,7 @@ export const metadataROOT: Metadata = {
 
     // Performance and technical
     "format-detection": "telephone=no",
-    "referrer": "origin-when-cross-origin",
+    referrer: "origin-when-cross-origin",
 
     // Social proof and credibility
     "company.current": "SpareBank 1 Utvikling",

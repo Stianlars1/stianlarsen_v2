@@ -1,9 +1,12 @@
-import {getNpmDownloads} from "@/app/actions/actions";
-import {Section} from "@/components/ui/section/section";
-import {open_source_projects_map, OpenSourceType,} from "@/data/open_source/openSource";
-import {Suspense} from "react";
-import {CgSpinner} from "react-icons/cg";
-import {OrderedListOpenSource} from "./orderedListOpenSource";
+import { getNpmDownloads } from "@/app/actions/actions";
+import { Section } from "@/components/ui/section/section";
+import {
+  open_source_projects_map,
+  OpenSourceType,
+} from "@/data/open_source/openSource";
+import { Suspense } from "react";
+import { CgSpinner } from "react-icons/cg";
+import { OrderedListOpenSource } from "./orderedListOpenSource";
 
 export const OpenSourceProjects = async () => {
   const projectsWithDownloads = await Promise.all(

@@ -1,7 +1,7 @@
 // src/app/sitemap.ts
-import type {MetadataRoute} from "next";
-import {projects} from "@/data/projects/projects";
-import {open_source_projects_map} from "@/data/open_source/openSource";
+import type { MetadataRoute } from "next";
+import { projects } from "@/data/projects/projects";
+import { open_source_projects_map } from "@/data/open_source/openSource";
 
 const HOST = "https://stianlarsen.com";
 
@@ -44,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Project URLs - external projects Stian created
-  const projectRoutes: MetadataRoute.Sitemap = projects.map(project => ({
+  const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
     url: project.websiteUrl,
     lastModified: new Date(project.publishDate).toISOString(),
     priority: 0.7,
@@ -53,23 +53,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Open source package URLs - NPM packages
   const npmRoutes: MetadataRoute.Sitemap = open_source_projects_map
-      .filter(pkg => pkg.npmUrl)
-      .map(pkg => ({
-        url: pkg.npmUrl,
-        lastModified: new Date(pkg.publishDate).toISOString(),
-        priority: 0.6,
-        changeFrequency: "monthly" as const,
-      }));
+    .filter((pkg) => pkg.npmUrl)
+    .map((pkg) => ({
+      url: pkg.npmUrl,
+      lastModified: new Date(pkg.publishDate).toISOString(),
+      priority: 0.6,
+      changeFrequency: "monthly" as const,
+    }));
 
   // Website URLs for packages that have dedicated sites
   const packageWebsiteRoutes: MetadataRoute.Sitemap = open_source_projects_map
-      .filter(pkg => pkg.websiteUrl)
-      .map(pkg => ({
-        url: pkg.websiteUrl!,
-        lastModified: new Date(pkg.publishDate).toISOString(),
-        priority: 0.6,
-        changeFrequency: "monthly" as const,
-      }));
+    .filter((pkg) => pkg.websiteUrl)
+    .map((pkg) => ({
+      url: pkg.websiteUrl!,
+      lastModified: new Date(pkg.publishDate).toISOString(),
+      priority: 0.6,
+      changeFrequency: "monthly" as const,
+    }));
 
   // Professional and social profiles for better link authority
   const profileRoutes: MetadataRoute.Sitemap = [
@@ -95,13 +95,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Technology-specific project GitHub repositories
   const githubRepoRoutes: MetadataRoute.Sitemap = projects
-      .filter(project => project.githubUrl)
-      .map(project => ({
-        url: project.githubUrl!,
-        lastModified: new Date(project.publishDate).toISOString(),
-        priority: 0.5,
-        changeFrequency: "monthly" as const,
-      }));
+    .filter((project) => project.githubUrl)
+    .map((project) => ({
+      url: project.githubUrl!,
+      lastModified: new Date(project.publishDate).toISOString(),
+      priority: 0.5,
+      changeFrequency: "monthly" as const,
+    }));
 
   // Company and professional association URLs
   const professionalRoutes: MetadataRoute.Sitemap = [
