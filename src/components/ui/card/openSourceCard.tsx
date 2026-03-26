@@ -1,18 +1,71 @@
 "use client";
 import { OpenSourceType } from "@/data/open_source/openSource";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { LuExternalLink } from "react-icons/lu";
-import { OpenSourceBorderBeam } from "./components/borderBeam/borderBeam";
-import { CopyButton } from "./components/copyButton/copyButton";
-import { ReactGradientAnimationBackground } from "./components/gradientBg/gradientBg";
-import { Beam } from "./components/lightBeam/lightBeam";
-import { MeteorsBackground } from "./components/meteorsBackground/meteorsBackground";
-import { PreviewCode } from "./components/previewCode/previewCode";
-import {
-  OpenSourceFadeWordsDesc,
-  OpenSourceFadeWordsTitle,
-} from "./components/react-fade-effects/fadeWordsEffect";
 import styles from "./css/card.module.scss";
+
+const OpenSourceBorderBeam = dynamic(
+  () =>
+    import("./components/borderBeam/borderBeam").then(
+      (module) => module.OpenSourceBorderBeam,
+    ),
+  { ssr: false },
+);
+
+const CopyButton = dynamic(
+  () =>
+    import("./components/copyButton/copyButton").then(
+      (module) => module.CopyButton,
+    ),
+  { ssr: false },
+);
+
+const ReactGradientAnimationBackground = dynamic(
+  () =>
+    import("./components/gradientBg/gradientBg").then(
+      (module) => module.ReactGradientAnimationBackground,
+    ),
+  { ssr: false },
+);
+
+const Beam = dynamic(
+  () =>
+    import("./components/lightBeam/lightBeam").then((module) => module.Beam),
+  { ssr: false },
+);
+
+const MeteorsBackground = dynamic(
+  () =>
+    import("./components/meteorsBackground/meteorsBackground").then(
+      (module) => module.MeteorsBackground,
+    ),
+  { ssr: false },
+);
+
+const PreviewCode = dynamic(
+  () =>
+    import("./components/previewCode/previewCode").then(
+      (module) => module.PreviewCode,
+    ),
+  { ssr: false },
+);
+
+const OpenSourceFadeWordsDesc = dynamic(
+  () =>
+    import("./components/react-fade-effects/fadeWordsEffect").then(
+      (module) => module.OpenSourceFadeWordsDesc,
+    ),
+  { ssr: false },
+);
+
+const OpenSourceFadeWordsTitle = dynamic(
+  () =>
+    import("./components/react-fade-effects/fadeWordsEffect").then(
+      (module) => module.OpenSourceFadeWordsTitle,
+    ),
+  { ssr: false },
+);
 
 export const OpenSourceCard = (project: OpenSourceType) => {
   const {
