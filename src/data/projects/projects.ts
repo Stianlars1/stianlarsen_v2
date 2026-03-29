@@ -10,6 +10,10 @@ import { project_colorPalette } from "@/data/projects/colorPalette/colorPalette"
 import { project_sonio } from "@/data/projects/sonio/sonio";
 import { project_cssVariablesAssistant } from "@/data/projects/cssVariablesAssistant/cssVariablesAssistant";
 import { project_rampkit } from "@/data/projects/rampkit/rampkit";
+import { project_ampera } from "@/data/projects/ampera/ampera";
+import { project_dbhost } from "@/data/projects/dbhost/dbhost";
+import { project_payload_img_convert } from "@/data/projects/payload-img-convert/payload-img-convert";
+import { project_dotViewer } from "@/data/projects/dotViewer/dotViewer";
 
 export interface Project {
   publishDate: string; // e.g., "2023-05-01" (Date when the entry was published)
@@ -22,6 +26,10 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  project_ampera,
+  project_dbhost,
+  project_payload_img_convert,
+  project_dotViewer,
   project_rampkit,
   project_cssVariablesAssistant,
   project_sonio,
