@@ -9,7 +9,7 @@ export const portfolioJsonLd = {
       familyName: "Larsen",
       jobTitle: "Full Stack Web Developer",
       description:
-        "I\u2019m Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at Sleipner Motor. With a Bachelor\u2019s degree in Computer Science and over three years of hands-on experience from professional roles and personal projects, I thrive at the intersection of design and backend engineering.",
+        "I'm Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at Sleipner Motor. With a Bachelor's degree in Computer Science and over three years of hands-on experience from professional roles and personal projects, I thrive at the intersection of design and backend engineering.",
       url: "https://stianlarsen.com",
       image: "https://stianlarsen.com/stian/STIAN_PHOTO.jpg",
       worksFor: {
@@ -31,7 +31,7 @@ export const portfolioJsonLd = {
       name: "Larsen Utvikling",
       url: "https://www.larsenutvikling.no",
       description:
-        "Larsen Utvikling is Stian Larsen's Norwegian development company (ENK), delivering websites, web applications, native apps, and headless CMS solutions \u2014 and the umbrella for products like Station, FrameSnapper, dotViewer, DBHost, and Spiss.",
+        "Larsen Utvikling is Stian Larsen's Norwegian development company (ENK), delivering websites, web applications, native apps, and headless CMS solutions - and the umbrella for products like Station, FrameSnapper, dotViewer, DBHost, and Spiss.",
       founder: { "@id": "https://stianlarsen.com#person" },
     },
     {
@@ -50,7 +50,7 @@ export const portfolioJsonLd = {
       name: "Stian Larsen | Full Stack Web Developer",
       url: "https://stianlarsen.com",
       description:
-        "I\u2019m Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at Sleipner Motor.",
+        "I'm Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at Sleipner Motor.",
       isPartOf: { "@id": "https://stianlarsen.com#website" },
       author: { "@id": "https://stianlarsen.com#person" },
       mainEntity: { "@id": "https://stianlarsen.com#person" },
@@ -215,7 +215,7 @@ export const portfolioJsonLd = {
       name: "TaskBuddy Landing Page: Marketing Frontend",
       url: "https://taskbuddy.dev",
       description:
-        "Designed and developed the marketing landing page for TaskBuddy to engage users and promote the app. Crafted custom illustrations and 3D assets in Figma, implemented a responsive layout with Next.js/TypeScript, and built sections like About Us and Learn More to showcase the app\u2019s value proposition.",
+        "Designed and developed the marketing landing page for TaskBuddy to engage users and promote the app. Crafted custom illustrations and 3D assets in Figma, implemented a responsive layout with Next.js/TypeScript, and built sections like About Us and Learn More to showcase the app's value proposition.",
       datePublished: "2024-05-05",
       author: { "@id": "https://stianlarsen.com#person" },
       applicationCategory: "WebApplication",
@@ -234,10 +234,10 @@ export const portfolioJsonLd = {
     },
     {
       "@type": "WebApplication",
-      name: "Skipper\u2019n Utleie: Boat Rental Platform",
+      name: "Skipper'n Utleie: Boat Rental Platform",
       url: "https://skipperenutleie.no",
       description:
-        "Developed a comprehensive boat rental platform for Skipper\u2019n Utleie to improve business operations. Built with Next.js and TypeScript using Tailwind CSS, integrated Firebase for bookings, users, inventory, and authentication. Created a custom admin dashboard for order tracking, profit monitoring, and inventory management with full CRUD functionality.",
+        "Developed a comprehensive boat rental platform for Skipper'n Utleie to improve business operations. Built with Next.js and TypeScript using Tailwind CSS, integrated Firebase for bookings, users, inventory, and authentication. Created a custom admin dashboard for order tracking, profit monitoring, and inventory management with full CRUD functionality.",
       datePublished: "2024-02-20",
       author: { "@id": "https://stianlarsen.com#person" },
       applicationCategory: "WebApplication",

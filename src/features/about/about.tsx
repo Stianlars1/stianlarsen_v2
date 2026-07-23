@@ -14,12 +14,12 @@ export const About = () => {
     <section id={"about"} className={styles.section}>
       <header>
         <p>
-          I’m <strong style={{ color: "hsl(var(--blue))" }}>Stian</strong>, a
-          passionate full stack web developer based in Norway, currently
-          crafting innovative solutions at Sleipner Motor. With a Bachelor’s
-          degree in Computer Science and over three years of hands-on experience
-          from professional roles and personal projects, I thrive at the
-          intersection of design and backend engineering.
+          I&apos;m <strong style={{ color: "hsl(var(--blue))" }}>Stian</strong>,
+          a passionate full stack web developer based in Norway, currently
+          crafting innovative solutions at Sleipner Motor. With a
+          Bachelor&apos;s degree in Computer Science and over three years of
+          hands-on experience from professional roles and personal projects, I
+          thrive at the intersection of design and backend engineering.
         </p>
         <p>
           My journey into technology began in my father&apos;s hobby room, where
@@ -103,10 +103,10 @@ export const About = () => {
           web application.
         </p>
         <p>
-          Driven by ambition, creativity, and a love for problem-solving, I’m
-          dedicated to building user-friendly, high-performance applications
-          that make a real difference. Let’s connect and create something
-          amazing together!
+          Driven by ambition, creativity, and a love for problem-solving,
+          I&apos;m dedicated to building user-friendly, high-performance
+          applications that make a real difference. Let&apos;s connect and
+          create something amazing together!
         </p>
       </header>
     </section>
