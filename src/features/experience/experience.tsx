@@ -1,4 +1,5 @@
 import { ExperienceCard } from "@/components/ui/card/card";
+import { OrderedList } from "@/components/ui/orderedList/orderedList";
 import { Section } from "@/components/ui/section/section";
 import { sparebank1_utvikling } from "@/features/experience/sparebank1_utvikling/sparebank1_utvikling";
 import { hasStartedSleipner } from "@/features/experience/utils";
@@ -14,11 +15,11 @@ export const Experience = () => {
   );
   return (
     <Section id={"experience"} title="experience">
-      <ol>
+      <OrderedList>
         {experienceMap.map((experience) => (
           <ExperienceCard key={experience.company} {...experience} />
         ))}
-      </ol>
+      </OrderedList>
     </Section>
   );
 };

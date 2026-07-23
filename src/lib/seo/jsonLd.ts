@@ -9,15 +9,30 @@ export const portfolioJsonLd = {
       familyName: "Larsen",
       jobTitle: "Full Stack Web Developer",
       description:
-        "I\u2019m Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at SpareBank 1 Utvikling. With a Bachelor\u2019s degree in Computer Science and over two years of hands-on experience from professional roles and personal projects, I thrive at the intersection of design and backend engineering.",
+        "I'm Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at Sleipner Motor. With a Bachelor's degree in Computer Science and over three years of hands-on experience from professional roles and personal projects, I thrive at the intersection of design and backend engineering.",
       url: "https://stianlarsen.com",
       image: "https://stianlarsen.com/stian/STIAN_PHOTO.jpg",
+      worksFor: {
+        "@type": "Organization",
+        name: "Sleipner Motor",
+        url: "https://no.sleipnergroup.com/",
+      },
+      affiliation: { "@id": "https://stianlarsen.com#larsen-utvikling" },
       sameAs: [
         "https://github.com/Stianlars1",
         "https://www.linkedin.com/in/stianlars1",
         "https://www.instagram.com/stianlarsen",
         "https://www.x.com/litehode",
       ],
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://stianlarsen.com#larsen-utvikling",
+      name: "Larsen Utvikling",
+      url: "https://www.larsenutvikling.no",
+      description:
+        "Larsen Utvikling is Stian Larsen's Norwegian development company (ENK), delivering websites, web applications, native apps, and headless CMS solutions - and the umbrella for products like Station, FrameSnapper, dotViewer, DBHost, and Spiss.",
+      founder: { "@id": "https://stianlarsen.com#person" },
     },
     {
       "@type": "WebSite",
@@ -35,10 +50,109 @@ export const portfolioJsonLd = {
       name: "Stian Larsen | Full Stack Web Developer",
       url: "https://stianlarsen.com",
       description:
-        "I\u2019m Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at SpareBank 1 Utvikling.",
+        "I'm Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at Sleipner Motor.",
       isPartOf: { "@id": "https://stianlarsen.com#website" },
       author: { "@id": "https://stianlarsen.com#person" },
       mainEntity: { "@id": "https://stianlarsen.com#person" },
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "Station",
+      url: "https://www.usestation.app",
+      description:
+        "Station is the command center for local development on macOS - a native SwiftUI app unifying services, Docker, terminals, dependency tracking, real health checks, and an AI Doctor that diagnoses and proposes repairs.",
+      datePublished: "2026-07-03",
+      author: { "@id": "https://stianlarsen.com#person" },
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "macOS",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "FrameSnapper",
+      url: "https://www.framesnapper.app",
+      description:
+        "FrameSnapper is a native macOS app that extracts full-resolution frames from videos - flexible sampling intervals, offline processing, concurrent jobs, and PNG/JPEG export.",
+      datePublished: "2026-07-01",
+      author: { "@id": "https://stianlarsen.com#person" },
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "macOS",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "dotViewer",
+      url: "https://dotviewer.app",
+      description:
+        "dotViewer is a native macOS Quick Look extension bringing syntax-highlighted previews to source code, dotfiles, and markdown - 600+ file types, right inside Finder.",
+      datePublished: "2026-03-01",
+      author: { "@id": "https://stianlarsen.com#person" },
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "macOS",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "PxPeek - JetBrains Plugin",
+      url: "https://pxpeek.com",
+      description:
+        "PxPeek is a JetBrains IDE plugin that shows real-time pixel equivalents for CSS units like rem, em, vh, and vw - inline beside each value or aggregated per line.",
+      datePublished: "2026-04-10",
+      author: { "@id": "https://stianlarsen.com#person" },
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "Windows, macOS, Linux",
+    },
+    {
+      "@type": "WebApplication",
+      name: "DBHost - Managed PostgreSQL Hosting",
+      url: "https://dbhost.app",
+      description:
+        "DBHost is a managed Database-as-a-Service platform for PostgreSQL, with provisioning, connection management, and a cross-platform CLI (@dbhost-app/cli).",
+      datePublished: "2026-03-27",
+      author: { "@id": "https://stianlarsen.com#person" },
+      applicationCategory: "WebApplication",
+      operatingSystem: "Web Browser",
+    },
+    {
+      "@type": "WebApplication",
+      name: "Spiss - Evidence-Based CV Tailoring",
+      url: "https://www.spiss.app",
+      description:
+        "Spiss generates consultant CVs tailored to specific job listings with full source traceability - no claims without sources. Multi-format ingestion, a requirements matrix, and red-flagging of unmet requirements.",
+      datePublished: "2026-06-10",
+      author: { "@id": "https://stianlarsen.com#person" },
+      applicationCategory: "WebApplication",
+      operatingSystem: "Web Browser",
+    },
+    {
+      "@type": "WebApplication",
+      name: "Min Plen - AI-Assisted Lawn Care Planner",
+      url: "https://minplen.no",
+      description:
+        "Min Plen is a Norwegian lawn care platform generating step-by-step seasonal maintenance plans tailored to local climate, with AI-assisted suggestions and photo history tracking.",
+      datePublished: "2026-06-05",
+      author: { "@id": "https://stianlarsen.com#person" },
+      applicationCategory: "WebApplication",
+      operatingSystem: "Web Browser",
+    },
+    {
+      "@type": "WebApplication",
+      name: "Motioned - AI Micro-Animation Generator",
+      url: "https://motioned.io",
+      description:
+        "Motioned is an AI-powered micro-animation generator for web interfaces - describe a hover, press, or toggle interaction and get production-ready code as Tailwind CSS or CSS Modules, powered by native CSS, Motion, or GSAP.",
+      datePublished: "2026-06-15",
+      author: { "@id": "https://stianlarsen.com#person" },
+      applicationCategory: "WebApplication",
+      operatingSystem: "Web Browser",
+    },
+    {
+      "@type": "WebApplication",
+      name: "Fotball-VM.lol - World Cup 2026 Fan Platform",
+      url: "https://fotball-vm.lol",
+      description:
+        "Norwegian fan community platform for the 2026 FIFA World Cup - match schedules, results, friend groups, viewing location finder, and watch party events.",
+      datePublished: "2026-06-20",
+      author: { "@id": "https://stianlarsen.com#person" },
+      applicationCategory: "WebApplication",
+      operatingSystem: "Web Browser",
     },
     {
       "@type": "WebApplication",
@@ -78,8 +192,9 @@ export const portfolioJsonLd = {
       name: "Tinify: Advanced Image Optimization Service",
       url: "https://tinify.dev",
       description:
-        "Developed Tinify, a free web-based image optimization service that compresses, resizes, and crops images to reduce file sizes and enhance website performance. Built a robust backend in Kotlin and Spring Boot, using tools like ImageMagick, pngquant, cjpeg, etc., for efficient image manipulation. Created a responsive frontend with Next.js and TypeScript for seamless UX, and deployed on AWS Lightsail for scalability and security.",
+        "Developed Tinify, a web-based image optimization service that compresses, resizes, and crops images across AVIF, GIF, JPEG, PNG, and WebP. Fully relaunched in July 2026 with a public REST API, account plans, usage-based billing, and a complete redesign. Built with Kotlin and Spring Boot using tools like ImageMagick, pngquant, and cjpeg, with a Next.js and TypeScript frontend.",
       datePublished: "2024-10-13",
+      dateModified: "2026-07-22",
       author: { "@id": "https://stianlarsen.com#person" },
       applicationCategory: "WebApplication",
       operatingSystem: "Web Browser",
@@ -100,7 +215,7 @@ export const portfolioJsonLd = {
       name: "TaskBuddy Landing Page: Marketing Frontend",
       url: "https://taskbuddy.dev",
       description:
-        "Designed and developed the marketing landing page for TaskBuddy to engage users and promote the app. Crafted custom illustrations and 3D assets in Figma, implemented a responsive layout with Next.js/TypeScript, and built sections like About Us and Learn More to showcase the app\u2019s value proposition.",
+        "Designed and developed the marketing landing page for TaskBuddy to engage users and promote the app. Crafted custom illustrations and 3D assets in Figma, implemented a responsive layout with Next.js/TypeScript, and built sections like About Us and Learn More to showcase the app's value proposition.",
       datePublished: "2024-05-05",
       author: { "@id": "https://stianlarsen.com#person" },
       applicationCategory: "WebApplication",
@@ -119,10 +234,10 @@ export const portfolioJsonLd = {
     },
     {
       "@type": "WebApplication",
-      name: "Skipper\u2019n Utleie: Boat Rental Platform",
+      name: "Skipper'n Utleie: Boat Rental Platform",
       url: "https://skipperenutleie.no",
       description:
-        "Developed a comprehensive boat rental platform for Skipper\u2019n Utleie to improve business operations. Built with Next.js and TypeScript using Tailwind CSS, integrated Firebase for bookings, users, inventory, and authentication. Created a custom admin dashboard for order tracking, profit monitoring, and inventory management with full CRUD functionality.",
+        "Developed a comprehensive boat rental platform for Skipper'n Utleie to improve business operations. Built with Next.js and TypeScript using Tailwind CSS, integrated Firebase for bookings, users, inventory, and authentication. Created a custom admin dashboard for order tracking, profit monitoring, and inventory management with full CRUD functionality.",
       datePublished: "2024-02-20",
       author: { "@id": "https://stianlarsen.com#person" },
       applicationCategory: "WebApplication",

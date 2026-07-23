@@ -4,7 +4,7 @@ import { portfolioJsonLd } from "@/lib/seo/jsonLd";
 /**
  * NOTE: keep jsonLd in its own file (tree-shakable and testable).
  * If you need per-request data (e.g. live project stats),
- * accept props and patch before serialising – exactly like you did
+ * accept props and patch before serialising - exactly like you did
  * for CSS-Variables-Assistant.
  */
 

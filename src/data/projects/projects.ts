@@ -13,7 +13,12 @@ import { project_rampkit } from "@/data/projects/rampkit/rampkit";
 import { project_ampera } from "@/data/projects/ampera/ampera";
 import { project_dbhost } from "@/data/projects/dbhost/dbhost";
 import { project_payload_img_convert } from "@/data/projects/payload-img-convert/payload-img-convert";
-import { project_dotViewer } from "@/data/projects/dotViewer/dotViewer";
+import { project_minplen } from "@/data/projects/minplen/minplen";
+import { project_spiss } from "@/data/projects/spiss/spiss";
+import { project_motioned } from "@/data/projects/motioned/motioned";
+import { project_fotball_vm } from "@/data/projects/fotball-vm/fotball-vm";
+import { project_pxpeek } from "@/data/projects/pxpeek/pxpeek";
+import { project_larsen_utvikling } from "@/data/projects/larsenUtvikling/larsenUtvikling";
 
 export interface Project {
   publishDate: string; // e.g., "2023-05-01" (Date when the entry was published)
@@ -26,10 +31,15 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  project_fotball_vm,
+  project_motioned,
+  project_spiss,
+  project_minplen,
+  project_pxpeek,
+  project_larsen_utvikling,
   project_ampera,
   project_dbhost,
   project_payload_img_convert,
-  project_dotViewer,
   project_rampkit,
   project_cssVariablesAssistant,
   project_sonio,

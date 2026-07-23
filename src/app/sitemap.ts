@@ -2,6 +2,7 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects/projects";
 import { open_source_projects_map } from "@/data/open_source/openSource";
+import { macosApps } from "@/data/macos_apps/macosApps";
 
 const HOST = "https://stianlarsen.com";
 
@@ -30,6 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
     },
     {
+      url: `${HOST}#macos-apps`,
+      lastModified: currentDate,
+      priority: 0.9,
+      changeFrequency: "monthly",
+    },
+    {
       url: `${HOST}#projects`,
       lastModified: currentDate,
       priority: 0.9,
@@ -47,6 +54,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
     url: project.websiteUrl,
     lastModified: new Date(project.publishDate).toISOString(),
+    priority: 0.7,
+    changeFrequency: "monthly" as const,
+  }));
+
+  // macOS app websites
+  const macosAppRoutes: MetadataRoute.Sitemap = macosApps.map((app) => ({
+    url: app.websiteUrl,
+    lastModified: new Date(app.publishDate).toISOString(),
     priority: 0.7,
     changeFrequency: "monthly" as const,
   }));
@@ -106,6 +121,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Company and professional association URLs
   const professionalRoutes: MetadataRoute.Sitemap = [
     {
+      url: "https://no.sleipnergroup.com/",
+      lastModified: currentDate,
+      priority: 0.4,
+      changeFrequency: "monthly",
+    },
+    {
+      url: "https://www.larsenutvikling.no",
+      lastModified: currentDate,
+      priority: 0.4,
+      changeFrequency: "monthly",
+    },
+    {
       url: "https://www.sparebank1.no",
       lastModified: currentDate,
       priority: 0.4,
@@ -144,6 +171,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticRoutes,
     ...projectRoutes,
+    ...macosAppRoutes,
     ...npmRoutes,
     ...packageWebsiteRoutes,
     ...profileRoutes,
