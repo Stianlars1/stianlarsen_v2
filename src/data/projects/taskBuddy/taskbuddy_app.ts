@@ -5,7 +5,7 @@ export const taskbuddy_app: Project = {
   publishDate: "2024-05-05",
   previewDate: "May 2024",
   description:
-    "Created TaskBuddy, an intuitive task management application designed to help users organize tasks and boost productivity. Developed the application using Next.js and TypeScript, crafting all UI components without third-party libraries to ensure originality and performance. Built a secure backend with Kotlin and Spring Boot, connecting to a PostgreSQL database hosted on AWS. Implemented custom authentication using JSON Web Tokens (JWT), eliminating reliance on third-party solutions. Managed user data, tasks, settings, and metadataROOT efficiently, utilizing Google Cloud for image storage.",
+    "Created TaskBuddy, a task management app for organizing tasks and boosting productivity. Next.js frontend with all UI components built from scratch, Kotlin + Spring Boot backend on AWS with PostgreSQL and custom JWT authentication.",
   technologies: [
     "Next.js",
     "TypeScript",
