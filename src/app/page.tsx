@@ -1,5 +1,6 @@
 import { About } from "@/features/about/about";
 import { Experience } from "@/features/experience/experience";
+import { MacosApps } from "@/features/macos_apps/macosApps";
 import { OpenSourceProjects } from "@/features/open_source/open_source";
 import { Projects } from "@/features/projects/projects";
 import { Page } from "@/components/layout/page/page";
@@ -19,6 +20,7 @@ export default async function Home() {
       <Page>
         <About />
         <Experience />
+        <MacosApps />
         <Projects />
         <OpenSourceProjects />
         <HiddenSeoContent />
