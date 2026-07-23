@@ -12,7 +12,7 @@ export const metadataROOT: Metadata = {
 
   // Comprehensive description optimized for search intent and conversion
   description:
-    "Stian Larsen is a passionate Full Stack Web Developer and Software Engineer based in Oslo, Norway. With 2+ years of professional experience at SpareBank 1 Utvikling and a Computer Science degree, I specialize in TypeScript, React, Next.js, Kotlin, and Spring Boot development. Creator of TaskBuddy.dev task management app, Tinify.dev image optimization service, and 8+ open-source NPM packages. Expert in frontend development, backend APIs, database design, and cloud deployment. Available for freelance web development projects in Norway and internationally.",
+    "Stian Larsen is a passionate Full Stack Web Developer and Software Engineer based in Norway. With 3+ years of professional experience — currently at Sleipner Motor, previously at SpareBank 1 Utvikling — and a Computer Science degree, I specialize in TypeScript, React, Next.js, Kotlin, Spring Boot, and native macOS development in Swift. Founder of Larsen Utvikling and creator of DBHost, Tinify.dev, and macOS apps Station, FrameSnapper, and dotViewer, plus 10+ open-source NPM packages. Expert in frontend development, backend APIs, database design, and cloud deployment. Available for freelance web development projects in Norway and internationally.",
 
   // Extensive keyword targeting for Norwegian and international searches
   keywords: [
@@ -50,6 +50,8 @@ export const metadataROOT: Metadata = {
     "JavaScript Developer Oslo",
 
     // Company-specific
+    "Sleipner Motor Developer",
+    "Larsen Utvikling",
     "SpareBank 1 Developer",
     "SpareBank 1 Utvikling",
     "SpareBank 1 Software Engineer",
@@ -58,6 +60,15 @@ export const metadataROOT: Metadata = {
     "FinTech Developer Norway",
 
     // Project-specific branding
+    "Station macOS app",
+    "FrameSnapper macOS app",
+    "dotViewer Quick Look",
+    "DBHost PostgreSQL hosting",
+    "Spiss CV tool",
+    "Motioned micro-animations",
+    "PxPeek JetBrains plugin",
+    "macOS App Developer Norway",
+    "Swift Developer Norway",
     "TaskBuddy.dev",
     "TaskBuddy creator",
     "TaskBuddy developer",
@@ -142,7 +153,7 @@ export const metadataROOT: Metadata = {
     title:
       "Stian Larsen | Full Stack Web Developer & Software Engineer | Oslo, Norway",
     description:
-      "Full Stack Developer from Oslo, Norway 🇳🇴 | Creator of TaskBuddy.dev & Tinify.dev | TypeScript • React • Next.js • Kotlin • Spring Boot | 2+ years at SpareBank 1 | 8+ open source packages | Computer Science graduate | Available for projects",
+      "Full Stack Developer from Norway 🇳🇴 | Founder of Larsen Utvikling | Creator of DBHost, Tinify.dev, Station, FrameSnapper & dotViewer | TypeScript • React • Next.js • Kotlin • Swift | Sleipner Motor | 10+ open source packages | Available for projects",
     images: [
       {
         url: "https://stianlarsen.com/stian/OG-STIAN.png",
@@ -168,7 +179,7 @@ export const metadataROOT: Metadata = {
     creator: "@litehode",
     title: "Stian Larsen | Full Stack Developer & Software Engineer | Oslo 🇳🇴",
     description:
-      "Full Stack Developer from Oslo, Norway 🇳🇴 | Creator of TaskBuddy.dev & Tinify.dev | TypeScript • React • Kotlin | @SpareBank1 | 8+ NPM packages | Computer Science graduate",
+      "Full Stack Developer from Norway 🇳🇴 | Founder of Larsen Utvikling | Creator of DBHost, Tinify.dev & macOS apps Station, FrameSnapper, dotViewer | TypeScript • React • Kotlin • Swift | 10+ NPM packages",
     images: ["https://stianlarsen.com/stian/OG-STIAN.png"],
   },
 
@@ -263,22 +274,25 @@ export const metadataROOT: Metadata = {
 
     // Professional qualifications
     "professional.role": "Full Stack Web Developer",
-    "professional.company": "SpareBank 1 Utvikling",
-    "professional.experience": "2+ years",
+    "professional.company": "Sleipner Motor",
+    "professional.experience": "3+ years",
     "professional.education": "Computer Science",
-    "professional.specialization": "TypeScript, React, Kotlin, Spring Boot",
+    "professional.specialization":
+      "TypeScript, React, Kotlin, Spring Boot, Swift",
     "professional.availability": "Available for projects",
 
     // Technical capabilities
     "skills.frontend":
       "React, Next.js, TypeScript, JavaScript, HTML, CSS, SCSS",
-    "skills.backend": "Kotlin, Spring Boot, Node.js, PostgreSQL, REST APIs",
+    "skills.backend":
+      "Kotlin, Spring Boot, Node.js, Python, PostgreSQL, REST APIs",
+    "skills.native": "Swift 6, SwiftUI, AppKit, macOS development",
     "skills.tools": "Git, AWS, Firebase, Vercel, WebStorm, IntelliJ IDEA",
-    "skills.languages": "TypeScript, Kotlin, JavaScript, SQL, HTML, CSS",
+    "skills.languages": "TypeScript, Kotlin, Swift, JavaScript, SQL, HTML, CSS",
 
     // Portfolio metrics
-    "portfolio.projects": "7+ major projects",
-    "portfolio.packages": "8+ NPM packages",
+    "portfolio.projects": "15+ major projects",
+    "portfolio.packages": "10+ NPM packages",
     "portfolio.github": "https://github.com/Stianlars1",
     "portfolio.linkedin": "https://www.linkedin.com/in/stianlars1",
 
@@ -308,13 +322,14 @@ export const metadataROOT: Metadata = {
     referrer: "origin-when-cross-origin",
 
     // Social proof and credibility
-    "company.current": "SpareBank 1 Utvikling",
+    "company.current": "Sleipner Motor",
+    "company.own": "Larsen Utvikling",
     "education.degree": "Computer Science",
-    "projects.featured": "TaskBuddy.dev, Tinify.dev",
-    "open_source.packages": "8+",
+    "projects.featured": "DBHost, Tinify.dev, Station, FrameSnapper",
+    "open_source.packages": "10+",
     "location.primary": "Oslo, Norway",
     "availability.freelance": "Yes",
-    "experience.years": "2+",
+    "experience.years": "3+",
     "specialization.primary": "Full Stack Development",
     "technologies.primary": "TypeScript, React, Kotlin, Spring Boot",
   },

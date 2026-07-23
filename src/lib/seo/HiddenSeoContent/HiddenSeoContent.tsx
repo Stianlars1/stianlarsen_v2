@@ -11,11 +11,14 @@ export const HiddenSeoContent = () => {
         </h2>
         <p className={styles.description}>
           Stian Larsen is a passionate and experienced Full Stack Web Developer
-          based in Oslo, Norway. With over 2 years of professional experience at
-          SpareBank 1 Utvikling and a Bachelor&apos;s degree in Computer
-          Science, Stian specializes in creating innovative web applications
-          using modern technologies including TypeScript, React, Next.js,
-          Kotlin, Spring Boot, and PostgreSQL.
+          based in Norway. With over 3 years of professional experience —
+          currently at Sleipner Motor in Fredrikstad, previously at SpareBank 1
+          Utvikling in Oslo — and a Bachelor&apos;s degree in Computer Science,
+          Stian specializes in creating innovative web applications and native
+          macOS apps using modern technologies including TypeScript, React,
+          Next.js, Kotlin, Spring Boot, Swift, SwiftUI, and PostgreSQL. Stian is
+          also the founder of Larsen Utvikling, his own Norwegian development
+          company.
         </p>
 
         <h3 className={styles.sectionTitle}>
@@ -27,8 +30,12 @@ export const HiddenSeoContent = () => {
             CSS3, SCSS
           </li>
           <li className={styles.feature}>
-            Backend Development: Kotlin, Spring Boot, Node.js, Express.js, REST
-            APIs
+            Backend Development: Kotlin, Spring Boot, Node.js, Express.js,
+            Python, REST APIs
+          </li>
+          <li className={styles.feature}>
+            Native macOS Development: Swift 6, SwiftUI, AppKit, Quick Look
+            Extensions, XPC Services
           </li>
           <li className={styles.feature}>
             Database Management: PostgreSQL, Firebase, Supabase, SQL
@@ -52,6 +59,82 @@ export const HiddenSeoContent = () => {
         <ul className={styles.projectsList}>
           <li className={styles.project}>
             <strong className={styles.projectName}>
+              Station - The Command Center for Local Development (macOS)
+            </strong>
+            <span className={styles.projectDescription}>
+              Native SwiftUI macOS app unifying services, Docker, terminals,
+              dependency tracking, real health checks, and an AI Doctor for
+              diagnosing local development environments.
+            </span>
+          </li>
+          <li className={styles.project}>
+            <strong className={styles.projectName}>
+              FrameSnapper - Video Frame Extraction for macOS
+            </strong>
+            <span className={styles.projectDescription}>
+              Native macOS app extracting full-resolution frames from videos
+              with flexible sampling, offline processing, and PNG/JPEG export.
+            </span>
+          </li>
+          <li className={styles.project}>
+            <strong className={styles.projectName}>
+              dotViewer - Quick Look for Code & Dotfiles (macOS)
+            </strong>
+            <span className={styles.projectDescription}>
+              Native macOS Quick Look extension with syntax-highlighted previews
+              for 600+ file types, built with Swift 6, SwiftUI, and XPC
+              services.
+            </span>
+          </li>
+          <li className={styles.project}>
+            <strong className={styles.projectName}>
+              DBHost - Managed PostgreSQL Hosting
+            </strong>
+            <span className={styles.projectDescription}>
+              Database-as-a-Service platform for PostgreSQL with provisioning,
+              connection management, and a cross-platform CLI.
+            </span>
+          </li>
+          <li className={styles.project}>
+            <strong className={styles.projectName}>
+              Spiss - Evidence-Based CV Tailoring
+            </strong>
+            <span className={styles.projectDescription}>
+              AI-powered consultant CV generation with full source traceability
+              — no claims without sources, requirements matrix, and multi-format
+              ingestion.
+            </span>
+          </li>
+          <li className={styles.project}>
+            <strong className={styles.projectName}>
+              Motioned - AI Micro-Animation Generator
+            </strong>
+            <span className={styles.projectDescription}>
+              AI-powered micro-animation generator exporting production-ready
+              Tailwind CSS or CSS Modules using native CSS, Motion, or GSAP.
+            </span>
+          </li>
+          <li className={styles.project}>
+            <strong className={styles.projectName}>
+              Min Plen - AI-Assisted Lawn Care Planner
+            </strong>
+            <span className={styles.projectDescription}>
+              Norwegian lawn care platform generating seasonal, step-by-step
+              maintenance plans with AI-assisted suggestions and photo history.
+            </span>
+          </li>
+          <li className={styles.project}>
+            <strong className={styles.projectName}>
+              PxPeek - JetBrains Plugin
+            </strong>
+            <span className={styles.projectDescription}>
+              JetBrains IDE plugin showing real-time pixel equivalents for CSS
+              units like rem, em, vh, and vw, built with Kotlin and the IntelliJ
+              Platform SDK.
+            </span>
+          </li>
+          <li className={styles.project}>
+            <strong className={styles.projectName}>
               TaskBuddy.dev - Task Management Application
             </strong>
             <span className={styles.projectDescription}>
@@ -66,8 +149,9 @@ export const HiddenSeoContent = () => {
             </strong>
             <span className={styles.projectDescription}>
               Powerful image compression and optimization tool using
-              Kotlin/Spring Boot backend with ImageMagick processing, Next.js
-              frontend, and AWS Lightsail deployment.
+              Kotlin/Spring Boot backend with ImageMagick processing and a
+              Next.js frontend. Fully relaunched in July 2026 with a public REST
+              API, account plans, usage-based billing, and a complete redesign.
             </span>
           </li>
           <li className={styles.project}>
@@ -104,10 +188,10 @@ export const HiddenSeoContent = () => {
           Open Source Contributions and NPM Packages
         </h3>
         <p className={styles.description}>
-          Stian Larsen is an active open source developer with 8+ published NPM
+          Stian Larsen is an active open source developer with 10+ published NPM
           packages downloaded thousands of times by developers worldwide.
-          Packages include React UI components, development tools, and utility
-          libraries for modern web development.
+          Packages include React UI components, development tools, CMS plugins,
+          and utility libraries for modern web development.
         </p>
         <ul className={styles.packagesList}>
           <li className={styles.package}>
@@ -136,18 +220,30 @@ export const HiddenSeoContent = () => {
           <li className={styles.package}>
             react-gradient-animation - Animated gradient background component
           </li>
+          <li className={styles.package}>
+            @stianlarsen/react-package-paster - Package install snippet
+            component for React
+          </li>
+          <li className={styles.package}>
+            payload-img-convert - Automatic image conversion plugin for Payload
+            CMS
+          </li>
+          <li className={styles.package}>
+            @dbhost-app/cli - Cross-platform CLI for DBHost PostgreSQL hosting
+          </li>
         </ul>
 
         <h3 className={styles.sectionTitle}>
-          Professional Experience at SpareBank 1 Utvikling Oslo
+          Professional Experience - Sleipner Motor and SpareBank 1 Utvikling
         </h3>
         <p className={styles.description}>
-          Currently working as a Full Stack Developer at SpareBank 1 Utvikling
-          in Oslo, Norway, where Stian contributes to Team Overview, building
-          critical front-end and back-end services for Norway&apos;s leading
-          bank. Responsibilities include React/TypeScript frontend development,
-          Kotlin/Spring Boot backend services, AWS cloud deployment, and agile
-          development practices.
+          Currently working as a Full Stack Developer at Sleipner Motor in
+          Fredrikstad, Norway, developing and maintaining front-end and back-end
+          systems with TypeScript, Next.js, React, and Python. Previously a Full
+          Stack Developer at SpareBank 1 Utvikling in Oslo, contributing to Team
+          Overview and building critical front-end and back-end services for
+          Norway&apos;s leading bank with React/TypeScript, Kotlin/Spring Boot,
+          AWS cloud deployment, and agile development practices.
         </p>
 
         <h3 className={styles.sectionTitle}>
@@ -207,6 +303,18 @@ export const HiddenSeoContent = () => {
           <span className={styles.keyword}>TaskBuddy Creator</span>
           <span className={styles.keyword}>Tinify Developer</span>
           <span className={styles.keyword}>SpareBank 1 Developer</span>
+          <span className={styles.keyword}>Sleipner Motor Developer</span>
+          <span className={styles.keyword}>Larsen Utvikling</span>
+          <span className={styles.keyword}>macOS App Developer</span>
+          <span className={styles.keyword}>Swift Developer Norway</span>
+          <span className={styles.keyword}>Station macOS app</span>
+          <span className={styles.keyword}>FrameSnapper macOS app</span>
+          <span className={styles.keyword}>dotViewer Quick Look</span>
+          <span className={styles.keyword}>DBHost PostgreSQL hosting</span>
+          <span className={styles.keyword}>Spiss CV tool</span>
+          <span className={styles.keyword}>Motioned animations</span>
+          <span className={styles.keyword}>Min Plen plenplan</span>
+          <span className={styles.keyword}>PxPeek JetBrains plugin</span>
           <span className={styles.keyword}>Oslo Web Development</span>
           <span className={styles.keyword}>Norway Software Development</span>
           <span className={styles.keyword}>Freelance Developer Norway</span>
