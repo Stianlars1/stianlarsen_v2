@@ -1,5 +1,3 @@
-// audioVisualizer.ts
-
 import { Project } from "../projects";
 
 export const project_audiovisualizer: Project = {
@@ -7,7 +5,7 @@ export const project_audiovisualizer: Project = {
   publishDate: "2023-09-10",
   previewDate: "September 2023",
   description:
-    "Designed, developed, and deployed AudioVisualizer.io, an online platform for uploading, sharing, and visualizing audio files. Built a RESTful API using Node.js and Express.js for audio compression, peak data generation, and storage. Implemented the user interface with React and TypeScript, utilizing Wavesurfer.js for audio visualization. Integrated Firebase for user authentication and database management. Enabled users to experience interactive audio visualizations similar to SoundCloud.",
+    "Built AudioVisualizer.io, a platform for uploading, sharing, and visualizing audio with SoundCloud-style interactive waveforms. Node.js + Express REST API for audio compression and peak generation, React frontend with Wavesurfer.js, Firebase auth.",
   technologies: [
     "Node.js",
     "Express.js",

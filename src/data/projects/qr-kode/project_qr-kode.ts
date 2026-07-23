@@ -1,5 +1,3 @@
-// qr_kode.ts
-
 import { Project } from "../projects";
 
 export const qr_code: Project = {
@@ -7,7 +5,7 @@ export const qr_code: Project = {
   publishDate: "2024-01-05",
   previewDate: "January 2024",
   description:
-    "Created qr-kode.app, a user-friendly platform for generating free custom QR codes with various configuration options. Implemented using Next.js and TypeScript for a fast and reliable frontend experience. Utilized Supabase for efficient data management and backend services. Employed Tailwind CSS to achieve a modern and responsive UI. Provided users with an intuitive interface to generate QR codes for personal and business use.",
+    "Created qr-kode.app, a free custom QR code generator with flexible configuration options. Next.js and TypeScript frontend, Supabase backend, and a modern responsive UI in Tailwind CSS.",
   technologies: [
     "Next.js",
     "TypeScript",

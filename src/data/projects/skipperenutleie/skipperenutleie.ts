@@ -1,5 +1,3 @@
-// skipperenutleie.ts
-
 import { Project } from "../projects";
 
 export const skipperenutleie: Project = {
@@ -7,7 +5,7 @@ export const skipperenutleie: Project = {
   publishDate: "2024-02-20",
   previewDate: "February 2024",
   description:
-    "Developed a comprehensive boat rental platform for Skipper'n Utleie, enhancing operational efficiency for the local business. Built with Next.js and TypeScript, using Tailwind CSS for responsive design. Integrated Firebase for managing bookings, users, inventory, and authentication. Designed a custom admin dashboard to display orders, track profits, and manage inventory with CRUD functionalities. Focused on creating an intuitive interface for both customers and administrators.",
+    "Built a boat rental platform for Skipper'n Utleie with Firebase-backed bookings, inventory, and authentication - plus a custom admin dashboard for orders, profit tracking, and full CRUD inventory management.",
   technologies: [
     "Next.js",
     "TypeScript",

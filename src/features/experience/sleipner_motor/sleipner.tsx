@@ -1,15 +1,13 @@
-// sparebank1_utvikling.ts
+// sleipner.tsx
 
 import { ReactNode } from "react";
 import { Experience } from "../types";
 
 const description: ReactNode = (
   <span>
-    At Sleipner Motor, I serve as a Full Stack Developer. My role involves
-    developing and maintaining both front-end and back-end systems, ensuring
-    seamless integration and functionality across our platforms. I work with a
-    variety of technologies to deliver high-quality solutions that meet the
-    needs of our users and business objectives.
+    Full Stack Developer building and maintaining front-end and back-end systems
+    across Sleipner&apos;s platforms, delivering high-quality solutions for
+    users and business alike.
   </span>
 );
 
@@ -23,12 +21,11 @@ export const sleipner: Experience = {
   description: description,
   descriptionList: [
     <li key={"Front"}>
-      <strong>Front-End Development:</strong> Utilize TypeScript and Next.js to
-      create responsive and user-friendly interfaces.
+      <strong>Front-End:</strong> TypeScript and Next.js for responsive,
+      user-friendly interfaces.
     </li>,
     <li key={"Back"}>
-      <strong>Back-End Development:</strong> Work with Python to develop robust
-      backend services.
+      <strong>Back-End:</strong> Python services and legacy system integration.
     </li>,
   ],
   technologies: ["TypeScript", "React", "Next.js", "Python", "Legacy Systems"],

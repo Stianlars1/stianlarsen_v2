@@ -1,5 +1,3 @@
-// sonio.ts
-
 import { Project } from "../projects";
 
 export const project_sonio: Project = {
@@ -7,7 +5,7 @@ export const project_sonio: Project = {
   publishDate: "2025-02-01",
   previewDate: "February 2025",
   description:
-    "Developed Sonio, a free web-based music platform that allows users to upload, share, and discover music. Built a robust backend in Kotlin + Spring boot handling custom authentication and data retrieval , utilizing postgres and aws s3 for efficient data storage and retrieval. Implemented advanced audio processing tools using WaveSurfer.js for seamless audio playback and waveform visualization. Created a responsive frontend using Next.js and TypeScript, focusing on a clean and intuitive user interface. Deployed the application on AWS Lightsail for scalability and security. Designed all UI components from scratch, ensuring a visually appealing and user-friendly experience. ",
+    "Developed Sonio, a free music platform for uploading, sharing, and discovering tracks - a SoundCloud-style experience with waveform playback via WaveSurfer.js. Kotlin + Spring Boot backend with custom auth and AWS S3 storage, Next.js frontend designed from scratch.",
   technologies: [
     "Kotlin",
     "Spring Boot",

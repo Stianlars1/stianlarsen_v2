@@ -1,21 +1,21 @@
-import Script from "next/script";
 import { portfolioJsonLd } from "@/lib/seo/jsonLd";
 
 /**
- * NOTE: keep jsonLd in its own file (tree-shakable and testable).
- * If you need per-request data (e.g. live project stats),
- * accept props and patch before serialising - exactly like you did
- * for CSS-Variables-Assistant.
+ * JSON-LD is structured data, not executable code, so it is rendered with a
+ * native <script> tag in the server-rendered HTML (per the Next.js JSON-LD
+ * guide) - next/script with afterInteractive would inject it client-side,
+ * hiding it from crawlers that do not execute JavaScript.
+ *
+ * The payload is sanitized by escaping "<" to prevent XSS via injected
+ * strings, as recommended by the same guide.
  */
-
 export function PortfolioStructuredData() {
   return (
-    <Script
+    <script
       id="portfolio-jsonld"
       type="application/ld+json"
-      strategy="afterInteractive" // SSR-safe, avoids hydration mismatch
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(portfolioJsonLd),
+        __html: JSON.stringify(portfolioJsonLd).replace(/</g, "\\u003c"),
       }}
     />
   );
