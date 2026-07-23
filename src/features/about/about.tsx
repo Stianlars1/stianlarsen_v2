@@ -78,7 +78,7 @@ export const About = () => {
           >
             DBHost
           </Link>{" "}
-          — my honest, personal MVP for managed PostgreSQL hosting. Most
+          - my honest, personal MVP for managed PostgreSQL hosting. Most
           recently I relaunched{" "}
           <Link
             aria-label="Link to Stian Larsen's image processing tool at Tinify.dev"

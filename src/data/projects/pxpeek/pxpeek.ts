@@ -5,7 +5,7 @@ export const project_pxpeek: Project = {
   publishDate: "2026-04-10",
   previewDate: "April 2026",
   description: [
-    "Developed PxPeek, a JetBrains IDE plugin that shows the pixel equivalents behind CSS units in real time. See what rem, em, vh, vw, and other relative units actually resolve to — inline beside each value or aggregated at the end of the line.",
+    "Developed PxPeek, a JetBrains IDE plugin that shows the pixel equivalents behind CSS units in real time. See what rem, em, vh, vw, and other relative units actually resolve to - inline beside each value or aggregated at the end of the line.",
     "Works across all JetBrains IDEs with CSS support, with user-configurable display options. Built for web developers and designers who want instant unit visualization without manual calculations.",
     "Shipped with a dedicated landing page at pxpeek.com built in Next.js.",
   ],

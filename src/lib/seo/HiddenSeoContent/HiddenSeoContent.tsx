@@ -11,9 +11,9 @@ export const HiddenSeoContent = () => {
         </h2>
         <p className={styles.description}>
           Stian Larsen is a passionate and experienced Full Stack Web Developer
-          based in Norway. With over 3 years of professional experience —
+          based in Norway. With over 3 years of professional experience -
           currently at Sleipner Motor in Fredrikstad, previously at SpareBank 1
-          Utvikling in Oslo — and a Bachelor&apos;s degree in Computer Science,
+          Utvikling in Oslo - and a Bachelor&apos;s degree in Computer Science,
           Stian specializes in creating innovative web applications and native
           macOS apps using modern technologies including TypeScript, React,
           Next.js, Kotlin, Spring Boot, Swift, SwiftUI, and PostgreSQL. Stian is
@@ -101,7 +101,7 @@ export const HiddenSeoContent = () => {
             </strong>
             <span className={styles.projectDescription}>
               AI-powered consultant CV generation with full source traceability
-              — no claims without sources, requirements matrix, and multi-format
+              - no claims without sources, requirements matrix, and multi-format
               ingestion.
             </span>
           </li>

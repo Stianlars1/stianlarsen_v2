@@ -60,7 +60,7 @@ export const portfolioJsonLd = {
       name: "Station",
       url: "https://www.usestation.app",
       description:
-        "Station is the command center for local development on macOS — a native SwiftUI app unifying services, Docker, terminals, dependency tracking, real health checks, and an AI Doctor that diagnoses and proposes repairs.",
+        "Station is the command center for local development on macOS - a native SwiftUI app unifying services, Docker, terminals, dependency tracking, real health checks, and an AI Doctor that diagnoses and proposes repairs.",
       datePublished: "2026-07-03",
       author: { "@id": "https://stianlarsen.com#person" },
       applicationCategory: "DeveloperApplication",
@@ -71,7 +71,7 @@ export const portfolioJsonLd = {
       name: "FrameSnapper",
       url: "https://www.framesnapper.app",
       description:
-        "FrameSnapper is a native macOS app that extracts full-resolution frames from videos — flexible sampling intervals, offline processing, concurrent jobs, and PNG/JPEG export.",
+        "FrameSnapper is a native macOS app that extracts full-resolution frames from videos - flexible sampling intervals, offline processing, concurrent jobs, and PNG/JPEG export.",
       datePublished: "2026-07-01",
       author: { "@id": "https://stianlarsen.com#person" },
       applicationCategory: "UtilitiesApplication",
@@ -82,7 +82,7 @@ export const portfolioJsonLd = {
       name: "dotViewer",
       url: "https://dotviewer.app",
       description:
-        "dotViewer is a native macOS Quick Look extension bringing syntax-highlighted previews to source code, dotfiles, and markdown — 600+ file types, right inside Finder.",
+        "dotViewer is a native macOS Quick Look extension bringing syntax-highlighted previews to source code, dotfiles, and markdown - 600+ file types, right inside Finder.",
       datePublished: "2026-03-01",
       author: { "@id": "https://stianlarsen.com#person" },
       applicationCategory: "DeveloperApplication",
@@ -93,7 +93,7 @@ export const portfolioJsonLd = {
       name: "PxPeek - JetBrains Plugin",
       url: "https://pxpeek.com",
       description:
-        "PxPeek is a JetBrains IDE plugin that shows real-time pixel equivalents for CSS units like rem, em, vh, and vw — inline beside each value or aggregated per line.",
+        "PxPeek is a JetBrains IDE plugin that shows real-time pixel equivalents for CSS units like rem, em, vh, and vw - inline beside each value or aggregated per line.",
       datePublished: "2026-04-10",
       author: { "@id": "https://stianlarsen.com#person" },
       applicationCategory: "DeveloperApplication",
@@ -115,7 +115,7 @@ export const portfolioJsonLd = {
       name: "Spiss - Evidence-Based CV Tailoring",
       url: "https://www.spiss.app",
       description:
-        "Spiss generates consultant CVs tailored to specific job listings with full source traceability — no claims without sources. Multi-format ingestion, a requirements matrix, and red-flagging of unmet requirements.",
+        "Spiss generates consultant CVs tailored to specific job listings with full source traceability - no claims without sources. Multi-format ingestion, a requirements matrix, and red-flagging of unmet requirements.",
       datePublished: "2026-06-10",
       author: { "@id": "https://stianlarsen.com#person" },
       applicationCategory: "WebApplication",
@@ -137,7 +137,7 @@ export const portfolioJsonLd = {
       name: "Motioned - AI Micro-Animation Generator",
       url: "https://motioned.io",
       description:
-        "Motioned is an AI-powered micro-animation generator for web interfaces — describe a hover, press, or toggle interaction and get production-ready code as Tailwind CSS or CSS Modules, powered by native CSS, Motion, or GSAP.",
+        "Motioned is an AI-powered micro-animation generator for web interfaces - describe a hover, press, or toggle interaction and get production-ready code as Tailwind CSS or CSS Modules, powered by native CSS, Motion, or GSAP.",
       datePublished: "2026-06-15",
       author: { "@id": "https://stianlarsen.com#person" },
       applicationCategory: "WebApplication",
@@ -148,7 +148,7 @@ export const portfolioJsonLd = {
       name: "Fotball-VM.lol - World Cup 2026 Fan Platform",
       url: "https://fotball-vm.lol",
       description:
-        "Norwegian fan community platform for the 2026 FIFA World Cup — match schedules, results, friend groups, viewing location finder, and watch party events.",
+        "Norwegian fan community platform for the 2026 FIFA World Cup - match schedules, results, friend groups, viewing location finder, and watch party events.",
       datePublished: "2026-06-20",
       author: { "@id": "https://stianlarsen.com#person" },
       applicationCategory: "WebApplication",

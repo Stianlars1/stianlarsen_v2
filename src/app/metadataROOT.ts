@@ -12,7 +12,7 @@ export const metadataROOT: Metadata = {
 
   // Comprehensive description optimized for search intent and conversion
   description:
-    "Stian Larsen is a passionate Full Stack Web Developer and Software Engineer based in Norway. With 3+ years of professional experience — currently at Sleipner Motor, previously at SpareBank 1 Utvikling — and a Computer Science degree, I specialize in TypeScript, React, Next.js, Kotlin, Spring Boot, and native macOS development in Swift. Founder of Larsen Utvikling and creator of DBHost, Tinify.dev, and macOS apps Station, FrameSnapper, and dotViewer, plus 10+ open-source NPM packages. Expert in frontend development, backend APIs, database design, and cloud deployment. Available for freelance web development projects in Norway and internationally.",
+    "Stian Larsen is a passionate Full Stack Web Developer and Software Engineer based in Norway. With 3+ years of professional experience - currently at Sleipner Motor, previously at SpareBank 1 Utvikling - and a Computer Science degree, I specialize in TypeScript, React, Next.js, Kotlin, Spring Boot, and native macOS development in Swift. Founder of Larsen Utvikling and creator of DBHost, Tinify.dev, and macOS apps Station, FrameSnapper, and dotViewer, plus 10+ open-source NPM packages. Expert in frontend development, backend APIs, database design, and cloud deployment. Available for freelance web development projects in Norway and internationally.",
 
   // Extensive keyword targeting for Norwegian and international searches
   keywords: [
