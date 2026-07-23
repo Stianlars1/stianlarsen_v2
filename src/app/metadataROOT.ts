@@ -159,7 +159,7 @@ export const metadataROOT: Metadata = {
         url: "https://stianlarsen.com/stian/OG-STIAN.png",
         width: 1200,
         height: 630,
-        alt: "Stian Larsen - Full Stack Web Developer from Oslo, Norway. Creator of TaskBuddy.dev and Tinify.dev. Expert in TypeScript, React, Next.js, Kotlin, and Spring Boot.",
+        alt: "Stian Larsen - Full Stack Web Developer from Norway. Founder of Larsen Utvikling and creator of DBHost, Tinify.dev, Station, FrameSnapper, and dotViewer. Expert in TypeScript, React, Next.js, Kotlin, Spring Boot, and Swift.",
         type: "image/png",
       },
       {
@@ -331,6 +331,6 @@ export const metadataROOT: Metadata = {
     "availability.freelance": "Yes",
     "experience.years": "3+",
     "specialization.primary": "Full Stack Development",
-    "technologies.primary": "TypeScript, React, Kotlin, Spring Boot",
+    "technologies.primary": "TypeScript, React, Kotlin, Spring Boot, Swift",
   },
 };
