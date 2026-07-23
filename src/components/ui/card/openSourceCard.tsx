@@ -103,7 +103,9 @@ export const OpenSourceCard = (project: OpenSourceType) => {
 
           {downloads && (
             <div className={styles.downloadsBadge}>
-              <span>{downloads.toLocaleString()} downloads last month</span>
+              <span>
+                {downloads.toLocaleString("en-US")} downloads last month
+              </span>
             </div>
           )}
         </header>
@@ -151,7 +153,9 @@ export const OpenSourceCard = (project: OpenSourceType) => {
 
         {downloads && (
           <div className={styles.downloadsBadge}>
-            <span>{downloads.toLocaleString()} downloads last month</span>
+            <span>
+              {downloads.toLocaleString("en-US")} downloads last month
+            </span>
           </div>
         )}
       </header>
