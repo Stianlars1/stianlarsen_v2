@@ -1,5 +1,7 @@
 import { border_beam } from "./border_beam/border_beam";
 import { copy_to_clipboard } from "./copy_to_clipboard/copy_to_clipboard";
+import { dbhost_cli } from "./dbhost_cli/dbhost_cli";
+import { payload_img_convert } from "./payload_img_convert/payload_img_convert";
 import { meteors } from "./meteors/meteors";
 import { react_code_preview } from "./react_code_preview/react_code_preview";
 import { react_fade_effects } from "./react_fade_effects/react_fade_effects";
@@ -19,6 +21,8 @@ export interface OpenSourceType {
   showExamples?: boolean;
 }
 export const open_source_projects_map: OpenSourceType[] = [
+  dbhost_cli,
+  payload_img_convert,
   react_ui_kit,
   react_package_paster,
   copy_to_clipboard,
