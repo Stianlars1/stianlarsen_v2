@@ -1,269 +1,167 @@
-export const portfolioJsonLd = {
+import type {
+  Graph,
+  Organization,
+  Person,
+  ProfilePage,
+  SoftwareApplication,
+  SoftwareSourceCode,
+  WebApplication,
+  WebSite,
+} from "schema-dts";
+import { projects, Project } from "@/data/projects/projects";
+import { macosApps } from "@/data/macos_apps/macosApps";
+import { open_source_projects_map } from "@/data/open_source/openSource";
+
+const HOST = "https://stianlarsen.com";
+const PERSON_ID = `${HOST}#person`;
+const WEBSITE_ID = `${HOST}#website`;
+const LARSEN_UTVIKLING_ID = `${HOST}#larsen-utvikling`;
+
+// Project.description allows ReactNode for rendering; JSON-LD needs plain text.
+const toPlainText = (description: Project["description"]): string => {
+  if (typeof description === "string") return description;
+  if (Array.isArray(description)) {
+    return description.filter((part) => typeof part === "string").join(" ");
+  }
+  return "";
+};
+
+const isIdePlugin = (project: Project) =>
+  project.technologies.includes("IntelliJ Platform SDK");
+
+const person: Person = {
+  "@type": "Person",
+  "@id": PERSON_ID,
+  name: "Stian Larsen",
+  givenName: "Stian",
+  familyName: "Larsen",
+  jobTitle: "Full Stack Web Developer",
+  description:
+    "I'm Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at Sleipner Motor. With a Bachelor's degree in Computer Science and over three years of hands-on experience from professional roles and personal projects, I thrive at the intersection of design and backend engineering.",
+  url: HOST,
+  image: `${HOST}/stian/STIAN_PHOTO.jpg`,
+  worksFor: {
+    "@type": "Organization",
+    name: "Sleipner Motor",
+    url: "https://no.sleipnergroup.com/",
+  },
+  affiliation: { "@id": LARSEN_UTVIKLING_ID },
+  knowsAbout: [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Kotlin",
+    "Spring Boot",
+    "Swift",
+    "SwiftUI",
+    "macOS Development",
+    "Python",
+    "PostgreSQL",
+    "AWS",
+  ],
+  sameAs: [
+    "https://github.com/Stianlars1",
+    "https://www.linkedin.com/in/stianlars1",
+    "https://www.instagram.com/stianlarsen",
+    "https://www.x.com/litehode",
+    "https://www.npmjs.com/~stianlarsen",
+  ],
+};
+
+const larsenUtvikling: Organization = {
+  "@type": "Organization",
+  "@id": LARSEN_UTVIKLING_ID,
+  name: "Larsen Utvikling",
+  url: "https://www.larsenutvikling.no",
+  description:
+    "Larsen Utvikling is Stian Larsen's Norwegian development company (ENK), delivering websites, web applications, native apps, and headless CMS solutions - and the umbrella for products like Station, FrameSnapper, dotViewer, DBHost, and Spiss.",
+  founder: { "@id": PERSON_ID },
+};
+
+const website: WebSite = {
+  "@type": "WebSite",
+  "@id": WEBSITE_ID,
+  name: "Stian Larsen Portfolio",
+  url: HOST,
+  description:
+    "Professional portfolio of Stian Larsen, Full Stack Web Developer from Oslo, Norway. Showcasing web development projects, native macOS apps, open source contributions, and professional experience.",
+  author: { "@id": PERSON_ID },
+  publisher: { "@id": PERSON_ID },
+};
+
+const profilePage: ProfilePage = {
+  "@type": "ProfilePage",
+  "@id": `${HOST}#homepage`,
+  name: "Stian Larsen | Full Stack Web Developer",
+  url: HOST,
+  description:
+    "I'm Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at Sleipner Motor.",
+  isPartOf: { "@id": WEBSITE_ID },
+  mainEntity: { "@id": PERSON_ID },
+};
+
+// Native macOS apps, derived from the same data that renders the site.
+const macosAppNodes: SoftwareApplication[] = macosApps.map((app) => ({
+  "@type": "SoftwareApplication",
+  name: app.name,
+  url: app.websiteUrl,
+  description: app.tagline,
+  datePublished: app.publishDate,
+  author: { "@id": PERSON_ID },
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "macOS",
+}));
+
+// Projects, derived from the projects data. IDE plugins are desktop software;
+// everything else on the list is a web application.
+const projectNodes: (WebApplication | SoftwareApplication)[] = projects.map(
+  (project) =>
+    isIdePlugin(project)
+      ? {
+          "@type": "SoftwareApplication",
+          name: project.title,
+          url: project.websiteUrl,
+          description: toPlainText(project.description),
+          datePublished: project.publishDate,
+          author: { "@id": PERSON_ID },
+          applicationCategory: "DeveloperApplication",
+          operatingSystem: "Windows, macOS, Linux",
+        }
+      : {
+          "@type": "WebApplication",
+          name: project.title,
+          url: project.websiteUrl,
+          description: toPlainText(project.description),
+          datePublished: project.publishDate,
+          author: { "@id": PERSON_ID },
+          applicationCategory: "WebApplication",
+          operatingSystem: "Web Browser",
+        },
+);
+
+// Open source npm packages, derived from the open source data.
+const openSourceNodes: SoftwareSourceCode[] = open_source_projects_map.map(
+  (pkg) => ({
+    "@type": "SoftwareSourceCode",
+    name: pkg.title,
+    url: pkg.websiteUrl ?? pkg.npmUrl,
+    codeRepository: pkg.npmUrl,
+    description: pkg.description,
+    datePublished: pkg.publishDate,
+    author: { "@id": PERSON_ID },
+    programmingLanguage: "TypeScript",
+  }),
+);
+
+export const portfolioJsonLd: Graph = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://stianlarsen.com#person",
-      name: "Stian Larsen",
-      givenName: "Stian",
-      familyName: "Larsen",
-      jobTitle: "Full Stack Web Developer",
-      description:
-        "I'm Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at Sleipner Motor. With a Bachelor's degree in Computer Science and over three years of hands-on experience from professional roles and personal projects, I thrive at the intersection of design and backend engineering.",
-      url: "https://stianlarsen.com",
-      image: "https://stianlarsen.com/stian/STIAN_PHOTO.jpg",
-      worksFor: {
-        "@type": "Organization",
-        name: "Sleipner Motor",
-        url: "https://no.sleipnergroup.com/",
-      },
-      affiliation: { "@id": "https://stianlarsen.com#larsen-utvikling" },
-      sameAs: [
-        "https://github.com/Stianlars1",
-        "https://www.linkedin.com/in/stianlars1",
-        "https://www.instagram.com/stianlarsen",
-        "https://www.x.com/litehode",
-      ],
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://stianlarsen.com#larsen-utvikling",
-      name: "Larsen Utvikling",
-      url: "https://www.larsenutvikling.no",
-      description:
-        "Larsen Utvikling is Stian Larsen's Norwegian development company (ENK), delivering websites, web applications, native apps, and headless CMS solutions - and the umbrella for products like Station, FrameSnapper, dotViewer, DBHost, and Spiss.",
-      founder: { "@id": "https://stianlarsen.com#person" },
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://stianlarsen.com#website",
-      name: "Stian Larsen Portfolio",
-      url: "https://stianlarsen.com",
-      description:
-        "Professional portfolio of Stian Larsen, Full Stack Web Developer from Oslo, Norway. Showcasing web development projects, open source contributions, and professional experience.",
-      author: { "@id": "https://stianlarsen.com#person" },
-      publisher: { "@id": "https://stianlarsen.com#person" },
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://stianlarsen.com#homepage",
-      name: "Stian Larsen | Full Stack Web Developer",
-      url: "https://stianlarsen.com",
-      description:
-        "I'm Stian, a passionate full stack web developer based in Norway, currently crafting innovative solutions at Sleipner Motor.",
-      isPartOf: { "@id": "https://stianlarsen.com#website" },
-      author: { "@id": "https://stianlarsen.com#person" },
-      mainEntity: { "@id": "https://stianlarsen.com#person" },
-    },
-    {
-      "@type": "SoftwareApplication",
-      name: "Station",
-      url: "https://www.usestation.app",
-      description:
-        "Station is the command center for local development on macOS - a native SwiftUI app unifying services, Docker, terminals, dependency tracking, real health checks, and an AI Doctor that diagnoses and proposes repairs.",
-      datePublished: "2026-07-03",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "DeveloperApplication",
-      operatingSystem: "macOS",
-    },
-    {
-      "@type": "SoftwareApplication",
-      name: "FrameSnapper",
-      url: "https://www.framesnapper.app",
-      description:
-        "FrameSnapper is a native macOS app that extracts full-resolution frames from videos - flexible sampling intervals, offline processing, concurrent jobs, and PNG/JPEG export.",
-      datePublished: "2026-07-01",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "UtilitiesApplication",
-      operatingSystem: "macOS",
-    },
-    {
-      "@type": "SoftwareApplication",
-      name: "dotViewer",
-      url: "https://dotviewer.app",
-      description:
-        "dotViewer is a native macOS Quick Look extension bringing syntax-highlighted previews to source code, dotfiles, and markdown - 600+ file types, right inside Finder.",
-      datePublished: "2026-03-01",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "DeveloperApplication",
-      operatingSystem: "macOS",
-    },
-    {
-      "@type": "SoftwareApplication",
-      name: "PxPeek - JetBrains Plugin",
-      url: "https://pxpeek.com",
-      description:
-        "PxPeek is a JetBrains IDE plugin that shows real-time pixel equivalents for CSS units like rem, em, vh, and vw - inline beside each value or aggregated per line.",
-      datePublished: "2026-04-10",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "DeveloperApplication",
-      operatingSystem: "Windows, macOS, Linux",
-    },
-    {
-      "@type": "WebApplication",
-      name: "DBHost - Managed PostgreSQL Hosting",
-      url: "https://dbhost.app",
-      description:
-        "DBHost is a managed Database-as-a-Service platform for PostgreSQL, with provisioning, connection management, and a cross-platform CLI (@dbhost-app/cli).",
-      datePublished: "2026-03-27",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "Spiss - Evidence-Based CV Tailoring",
-      url: "https://www.spiss.app",
-      description:
-        "Spiss generates consultant CVs tailored to specific job listings with full source traceability - no claims without sources. Multi-format ingestion, a requirements matrix, and red-flagging of unmet requirements.",
-      datePublished: "2026-06-10",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "Min Plen - AI-Assisted Lawn Care Planner",
-      url: "https://minplen.no",
-      description:
-        "Min Plen is a Norwegian lawn care platform generating step-by-step seasonal maintenance plans tailored to local climate, with AI-assisted suggestions and photo history tracking.",
-      datePublished: "2026-06-05",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "Motioned - AI Micro-Animation Generator",
-      url: "https://motioned.io",
-      description:
-        "Motioned is an AI-powered micro-animation generator for web interfaces - describe a hover, press, or toggle interaction and get production-ready code as Tailwind CSS or CSS Modules, powered by native CSS, Motion, or GSAP.",
-      datePublished: "2026-06-15",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "Fotball-VM.lol - World Cup 2026 Fan Platform",
-      url: "https://fotball-vm.lol",
-      description:
-        "Norwegian fan community platform for the 2026 FIFA World Cup - match schedules, results, friend groups, viewing location finder, and watch party events.",
-      datePublished: "2026-06-20",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "CSS Variables Assistant - JetBrains Plugin",
-      url: "https://www.css-variables-assistant.dev",
-      description:
-        "Advanced CSS custom properties plugin for JetBrains IDEs (IntelliJ/WebStorm/PyCharm, etc.) with intelligent autocomplete, live preview, and multi-preprocessor support.",
-      datePublished: "2025-05-16",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "Sonio: Advanced Music Platform, just like SoundCloud",
-      url: "https://sonio.fm",
-      description:
-        "Developed Sonio, a free web-based music platform that allows users to upload, share, and discover music. Built a robust backend in Kotlin + Spring Boot handling custom authentication and data retrieval, utilizing Postgres and AWS S3 for efficient data storage and retrieval. Implemented advanced audio processing tools using WaveSurfer.js for seamless audio playback and waveform visualization. Created a responsive frontend with Next.js and TypeScript, focusing on a clean and intuitive UI. Deployed the app on AWS Lightsail for scalability and security, designing all UI components from scratch for a user-friendly experience.",
-      datePublished: "2025-02-01",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "ColorPalette: Create beautiful color palettes with instant code export",
-      url: "https://colorpalette.dev",
-      description:
-        "Created ColorPalette, a web application that allows users to generate beautiful color palettes and export them as code snippets for various programming languages.",
-      datePublished: "2024-12-24",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "Tinify: Advanced Image Optimization Service",
-      url: "https://tinify.dev",
-      description:
-        "Developed Tinify, a web-based image optimization service that compresses, resizes, and crops images across AVIF, GIF, JPEG, PNG, and WebP. Fully relaunched in July 2026 with a public REST API, account plans, usage-based billing, and a complete redesign. Built with Kotlin and Spring Boot using tools like ImageMagick, pngquant, and cjpeg, with a Next.js and TypeScript frontend.",
-      datePublished: "2024-10-13",
-      dateModified: "2026-07-22",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "TaskBuddy: Task Management Application",
-      url: "https://taskbuddy.dev",
-      description:
-        "Created TaskBuddy, an intuitive task management app to help users organize tasks and boost productivity. Developed the front end with Next.js and TypeScript, and a secure backend in Kotlin + Spring Boot with a PostgreSQL database on AWS. Implemented custom JWT authentication and used Google Cloud Storage for image hosting.",
-      datePublished: "2024-05-05",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "TaskBuddy Landing Page: Marketing Frontend",
-      url: "https://taskbuddy.dev",
-      description:
-        "Designed and developed the marketing landing page for TaskBuddy to engage users and promote the app. Crafted custom illustrations and 3D assets in Figma, implemented a responsive layout with Next.js/TypeScript, and built sections like About Us and Learn More to showcase the app's value proposition.",
-      datePublished: "2024-05-05",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "Strek-kode: Text to Barcode Generator",
-      url: "https://strek-kode.no",
-      description:
-        "Developed and open-sourced Strek-kode, a free web app that converts text into barcodes. Built with Next.js and TypeScript for high performance, using Firebase for auth and real-time database. Designed an easy-to-use interface for generating barcodes to meet various user needs.",
-      datePublished: "2024-03-10",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "Skipper'n Utleie: Boat Rental Platform",
-      url: "https://skipperenutleie.no",
-      description:
-        "Developed a comprehensive boat rental platform for Skipper'n Utleie to improve business operations. Built with Next.js and TypeScript using Tailwind CSS, integrated Firebase for bookings, users, inventory, and authentication. Created a custom admin dashboard for order tracking, profit monitoring, and inventory management with full CRUD functionality.",
-      datePublished: "2024-02-20",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "QR-kode.app: Custom QR Code Generator",
-      url: "https://qr-kode.app",
-      description:
-        "Created qr-kode.app, a user-friendly platform for generating free custom QR codes with various configuration options. Built with Next.js and TypeScript for a fast frontend experience, used Supabase for backend data management, and styled with Tailwind CSS for a modern responsive UI. Provides an intuitive interface for generating QR codes for personal and business use.",
-      datePublished: "2024-01-05",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
-    {
-      "@type": "WebApplication",
-      name: "AudioVisualizer.io: Online Audio Visualization Platform",
-      url: "https://audiovisualizer.io",
-      description:
-        "Designed, developed, and deployed AudioVisualizer.io, an online platform for uploading, sharing, and visualizing audio files. Built a RESTful API with Node.js/Express for audio compression and peak generation, used Wavesurfer.js and React for the frontend visualization, and integrated Firebase for auth and database. Enables users to upload tracks and see interactive waveforms like on SoundCloud.",
-      datePublished: "2023-09-10",
-      author: { "@id": "https://stianlarsen.com#person" },
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-    },
+    person,
+    larsenUtvikling,
+    website,
+    profilePage,
+    ...macosAppNodes,
+    ...projectNodes,
+    ...openSourceNodes,
   ],
 };

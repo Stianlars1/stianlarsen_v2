@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { ME } from "@/data/about_me/me";
 
 export const metadataROOT: Metadata = {
+  metadataBase: new URL("https://stianlarsen.com"),
+
   // Enhanced title structure for maximum SEO impact
   title: {
     default:
@@ -235,10 +237,11 @@ export const metadataROOT: Metadata = {
     ],
     shortcut: "/favicon.ico",
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#2563eb" },
+      {
+        url: "/apple-touch-icon-152x152.png",
+        sizes: "152x152",
+        type: "image/png",
+      },
     ],
   },
 
@@ -302,7 +305,6 @@ export const metadataROOT: Metadata = {
     "apple-mobile-web-app-status-bar-style": "black-translucent",
     "apple-mobile-web-app-title": "Stian Larsen",
     "msapplication-TileColor": "#2563eb",
-    "msapplication-config": "/browserconfig.xml",
 
     // Content and language
     "content-language": "en",
