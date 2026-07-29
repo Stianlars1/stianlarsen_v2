@@ -2,7 +2,6 @@ import { Tooltip } from "@/components/ui/tooltip/tooltip";
 import { ME } from "@/data/about_me/me";
 import { Socials } from "@/data/social/social";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./css/aside.module.scss";
 
 export const Aside = () => {
@@ -28,14 +27,15 @@ export const Aside = () => {
         <nav className={styles.nav}>
           {Socials.map((social) => (
             <Tooltip content={social.name} key={social.name}>
-              <Link
+              <a
                 className={styles.navLink}
                 href={social.url}
                 target={social.target}
                 rel={social.rel}
+                aria-label={social.name}
               >
                 {social.icon({ className: styles.icon, size: 24 })}
-              </Link>
+              </a>
             </Tooltip>
           ))}
         </nav>
