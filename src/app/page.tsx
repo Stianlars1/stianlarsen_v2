@@ -3,6 +3,7 @@ import { Experience } from "@/features/experience/experience";
 import { MacosApps } from "@/features/macos_apps/macosApps";
 import { OpenSourceProjects } from "@/features/open_source/open_source";
 import { Projects } from "@/features/projects/projects";
+import { DeveloperResources } from "@/features/developer_resources/developer_resources";
 import { Page } from "@/components/layout/page/page";
 import { HiddenSeoContent } from "@/lib/seo/HiddenSeoContent/HiddenSeoContent";
 import { Metadata, Viewport } from "next";
@@ -22,6 +23,7 @@ export default async function Home() {
         <Experience />
         <MacosApps />
         <Projects />
+        <DeveloperResources />
         <OpenSourceProjects />
         <HiddenSeoContent />
       </Page>

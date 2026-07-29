@@ -5,7 +5,8 @@ export type Sections =
   | "experience"
   | "projects"
   | "Open Source Projects"
-  | "macOS Apps";
+  | "macOS Apps"
+  | "AI & Developer Resources";
 export const Section = ({
   title,
   children,
