@@ -64,19 +64,19 @@
   display: none;
 }
 
-.resourceTitle {
+.resourceCard .resourceTitle {
   margin: 0;
   color: hsl(var(--foreground));
-  font-size: 1.35rem;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: normal;
 }
 
-.description {
+.resourceCard .description {
   margin-top: 0.55rem;
   color: hsl(var(--muted-foreground));
-  font-size: 0.95rem;
-  line-height: 1.55;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .tags {
@@ -194,7 +194,7 @@
   }
 }
 
-.primaryLink {
+.resourceCard .primaryLink {
   margin-top: 1rem;
   color: hsl(var(--tag-foreground));
   font-size: 0.9rem;
@@ -210,20 +210,11 @@
   list-style: none;
 }
 
-.resourceLink {
-  position: relative;
+.resourceCard .resourceLink {
   font-size: 0.82rem;
-
-  &::after {
-    position: absolute;
-    right: 1.2rem;
-    bottom: -0.2rem;
-    left: 0;
-    height: 1px;
-    background: currentColor;
-    content: "";
-    opacity: 0.45;
-  }
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -256,10 +247,6 @@
   .logoSlot {
     width: 3.75rem;
     height: 3.75rem;
-  }
-
-  .resourceTitle {
-    font-size: 1.15rem;
   }
 
   .cardContent {
