@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ME } from "@/data/about_me/me";
 
 export const metadataROOT: Metadata = {
-  metadataBase: new URL("https://stianlarsen.com"),
+  metadataBase: new URL("https://v2.stianlarsen.com"),
 
   // Enhanced title structure for maximum SEO impact
   title: {
@@ -150,7 +150,7 @@ export const metadataROOT: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://stianlarsen.com/",
+    url: "https://v2.stianlarsen.com/",
     siteName: "Stian Larsen - Full Stack Developer Portfolio",
     title:
       "Stian Larsen | Full Stack Web Developer & Software Engineer | Oslo, Norway",
@@ -185,13 +185,15 @@ export const metadataROOT: Metadata = {
     images: ["https://stianlarsen.com/stian/OG-STIAN.png"],
   },
 
-  // SEO fundamentals for better indexing
+  // Self-referencing on the archive host. Pointing the canonical at
+  // stianlarsen.com while this page is noindexed would risk carrying the
+  // noindex over to v3, which is the live site.
   alternates: {
-    canonical: "https://stianlarsen.com/",
+    canonical: "https://v2.stianlarsen.com/",
     languages: {
-      "en-US": "https://stianlarsen.com/",
-      en: "https://stianlarsen.com/",
-      no: "https://stianlarsen.com/", // Norwegian users
+      "en-US": "https://v2.stianlarsen.com/",
+      en: "https://v2.stianlarsen.com/",
+      no: "https://v2.stianlarsen.com/", // Norwegian users
     },
   },
 
@@ -212,18 +214,17 @@ export const metadataROOT: Metadata = {
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
 
-  // Enhanced robots for better crawling
+  // This site is the archived v2. stianlarsen.com now serves v3, so v2 must
+  // stay out of the index or the two compete for the same queries. Crawling is
+  // deliberately still allowed in robots.txt: a blocked page can never be read,
+  // so the noindex below would never be seen and old URLs would linger.
   robots: {
-    index: true,
-    follow: true,
-    nocache: false,
+    index: false,
+    follow: false,
+    nocache: true,
     googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      index: false,
+      follow: false,
     },
   },
 
@@ -312,7 +313,7 @@ export const metadataROOT: Metadata = {
     distribution: "Global",
     rating: "General",
     "revisit-after": "7 days",
-    robots: "index,follow",
+    robots: "noindex,nofollow",
 
     // Schema.org hints for better structured data
     "schema.person": "https://stianlarsen.com#person",

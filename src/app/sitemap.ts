@@ -4,7 +4,9 @@ import { projects } from "@/data/projects/projects";
 import { open_source_projects_map } from "@/data/open_source/openSource";
 import { macosApps } from "@/data/macos_apps/macosApps";
 
-const HOST = "https://stianlarsen.com";
+// The archive host. These URLs used to be stianlarsen.com, which now serves v3
+// — listing them from here would claim pages this site no longer owns.
+const HOST = "https://v2.stianlarsen.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString();

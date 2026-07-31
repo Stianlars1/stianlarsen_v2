@@ -1,8 +1,14 @@
 // src/app/robots.ts
 import type { MetadataRoute } from "next";
 
-const HOST = "https://stianlarsen.com";
+const HOST = "https://v2.stianlarsen.com";
 
+/* This is the archived v2 site; stianlarsen.com now serves v3.
+   Crawling stays allowed on purpose. De-indexing happens through the noindex
+   in metadataROOT, and a crawler that is blocked here would never fetch the
+   page to see it — already-indexed URLs would then linger indefinitely.
+   No sitemap or host is declared, because both used to claim the domain that
+   now belongs to v3. */
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -24,9 +30,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/_next/", "/api/", "/.well-known/", "/admin/", "/private/"],
       },
     ],
-    // Sitemap location for search engines
-    sitemap: `${HOST}/sitemap.xml`,
-    // Host declaration for domain canonicalization
     host: HOST,
   };
 }
