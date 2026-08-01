@@ -3,6 +3,7 @@
   --nav-height: 64px;
   --max-width: calc(1280px - (6rem * 2));
   --transition-time: 0.2s;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --aside-width: 270px;
   --content-width: 640px;
   --padding: calc(2rem + 8px);

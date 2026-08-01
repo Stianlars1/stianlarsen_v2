@@ -1,6 +1,6 @@
 "use client";
 import { OpenSourceCard } from "@/components/ui/card/openSourceCard";
-import { OrderedList } from "@/components/ui/orderedList/orderedList";
+import { ProgressiveList } from "@/components/ui/progressiveList/progressiveList";
 import { OpenSourceType } from "@/data/open_source/openSource";
 import { useState } from "react";
 import styles from "./css/opensourcelist.module.css";
@@ -26,7 +26,13 @@ export const OrderedListOpenSource = ({
           onChange={() => setShowExamples(!showExamples)}
         />
       </div>
-      <OrderedList>
+      <ProgressiveList
+        id="open-source-list"
+        initialVisible={4}
+        totalCount={openSourceProjects.length}
+        expandLabel={`Browse all ${openSourceProjects.length} packages`}
+        collapseLabel="Show fewer packages"
+      >
         {openSourceProjects.map((project) => (
           <OpenSourceCard
             key={JSON.stringify(project.packageName)}
@@ -34,7 +40,7 @@ export const OrderedListOpenSource = ({
             showExamples={showExamples}
           />
         ))}
-      </OrderedList>
+      </ProgressiveList>
     </>
   );
 };

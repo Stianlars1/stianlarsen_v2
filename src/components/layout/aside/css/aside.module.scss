@@ -50,6 +50,17 @@
         .jobTitle {
           font-family: var(--font-geist-mono);
         }
+
+        .typewriter {
+          display: inline-block;
+          white-space: pre;
+        }
+
+        .typewriterCharacter {
+          display: inline-block;
+          opacity: 0;
+          animation: typewriter-character 240ms steps(1, end) forwards;
+        }
       }
     }
     .nav {
@@ -72,6 +83,49 @@
         }
       }
     }
+  }
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@keyframes typewriter-character {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .asideWrapper .asideContent .header .headerInfoWrapper {
+    .typewriter {
+      animation: typewriter-reduced 160ms var(--ease-out) both;
+    }
+
+    .typewriterCharacter {
+      opacity: 1;
+      animation: none;
+    }
+  }
+}
+
+@keyframes typewriter-reduced {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 

@@ -1,0 +1,200 @@
+.progressiveList {
+  width: 100%;
+}
+
+.listRegion {
+  width: 100%;
+
+  @for $visible-items from 1 through 12 {
+    &[data-initial-visible="#{$visible-items}"][data-expanded="false"]
+      > ol
+      > :nth-child(n + #{$visible-items + 1}) {
+      display: none;
+    }
+
+    &[data-initial-visible="#{$visible-items}"][data-reveal-next="true"]
+      > ol
+      > :nth-child(#{$visible-items + 1}) {
+      animation: reveal-next-card 200ms var(--ease-out) both;
+    }
+  }
+}
+
+.control {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 64px;
+  opacity: 1;
+  transition: opacity 160ms var(--ease-out);
+
+  &[data-layout="collapsed"] {
+    min-height: 96px;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &[data-layout="expanded"][data-transitioning="true"] {
+    transition-duration: 140ms;
+  }
+
+  &[data-transitioning="true"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &[data-instant="true"] {
+    transition: none;
+  }
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0 -0.5rem;
+    border-radius: 999px;
+    background:
+      radial-gradient(
+        ellipse at 50% 0%,
+        hsl(var(--tag-foreground) / 0.13),
+        transparent 64%
+      ),
+      linear-gradient(
+        180deg,
+        hsl(var(--background) / 0) 0%,
+        hsl(var(--background)) 72%
+      );
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 44px;
+  border: 1px solid hsl(var(--tag-foreground) / 0.42);
+  border-radius: 999px;
+  background: hsl(var(--card) / 0.96);
+  padding: 0.35rem 0.35rem 0.35rem 1.1rem;
+  box-shadow:
+    0 12px 32px hsl(var(--background) / 0.24),
+    inset 0 1px 0 hsl(var(--foreground) / 0.08);
+  color: hsl(var(--foreground));
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transform: scale(1);
+  transition:
+    transform 140ms var(--ease-out),
+    border-color 160ms var(--ease-out),
+    background-color 160ms var(--ease-out);
+
+  &:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
+  }
+
+  &[data-expanded="true"] .icon {
+    transform: rotate(180deg);
+  }
+
+  &[data-instant="true"] {
+    transition: none;
+
+    .icon {
+      transition: none;
+    }
+  }
+}
+
+.iconShell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: hsl(var(--tag) / 0.72);
+  color: hsl(var(--tag-foreground));
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+  transform: rotate(0);
+  transition: transform 200ms var(--ease-out);
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@keyframes reveal-next-card {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    border-color: hsl(var(--tag-foreground) / 0.72);
+    background: hsl(var(--tag) / 0.34);
+  }
+
+  .button:active {
+    transform: scale(0.97);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listRegion {
+    @for $visible-items from 1 through 12 {
+      &[data-initial-visible="#{$visible-items}"][data-reveal-next="true"]
+        > ol
+        > :nth-child(#{$visible-items + 1}) {
+        animation: reveal-next-card-reduced 120ms var(--ease-out) both;
+      }
+    }
+  }
+
+  .button {
+    transition:
+      border-color 120ms var(--ease-out),
+      background-color 120ms var(--ease-out);
+  }
+
+  .icon {
+    transition: none;
+  }
+}
+
+@keyframes reveal-next-card-reduced {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
